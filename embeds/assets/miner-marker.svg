@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Miner icon">
+  <defs>
+    <linearGradient id="helmet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd75e"/>
+      <stop offset="1" stop-color="#f3b429"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="35" r="18" fill="#f6c6a7"/>
+  <path d="M14 28c0-10 8-18 18-18s18 8 18 18v4H14z" fill="url(#helmet)"/>
+  <rect x="24" y="16" width="16" height="8" rx="4" fill="#3c3c3c"/>
+  <circle cx="32" cy="20" r="4" fill="#fff2b8"/>
+  <circle cx="25" cy="35" r="2.2" fill="#2f2f2f"/>
+  <circle cx="39" cy="35" r="2.2" fill="#2f2f2f"/>
+  <path d="M24 43c2 3 5 4 8 4s6-1 8-4" fill="none" stroke="#a14a2f" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M18 46c4 6 10 9 14 9s10-3 14-9" fill="#4f4f4f"/>
+</svg>
