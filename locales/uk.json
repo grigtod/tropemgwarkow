@@ -1,0 +1,124 @@
+{
+  "app": {
+    "language": {
+      "menuTitle": "Мова",
+      "openMenu": "Обрати мову"
+    },
+    "controls": {
+      "myLocation": "Моє місце",
+      "centerCity": "Центр міста",
+      "layers": "Шари мапи",
+      "info": "Інформація",
+      "language": "Мова"
+    },
+    "location": {
+      "fullExperience": "Для повного досвіду дозвольте доступ до геолокації.",
+      "allow": "Дозволити геолокацію",
+      "dismiss": "Закрити",
+      "prompt": "Дозвольте доступ до геолокації, щоб користуватися кнопкою Моє місце.",
+      "requesting": "Запит...",
+      "notSupported": "Геолокація не підтримується у цьому браузері.",
+      "failed": "Не вдалося отримати геолокацію. Спробуйте ще раз у налаштуваннях браузера.",
+      "denied": "Доступ до геолокації відхилено. Увімкніть його в налаштуваннях браузера та перезавантажте сторінку.",
+      "unavailable": "Ваше місцезнаходження зараз недоступне. Спробуйте трохи пізніше.",
+      "timeout": "Час очікування геолокації вичерпано. Спробуйте ще раз."
+    },
+    "layers": {
+      "title": "Шари мапи",
+      "baseMap": "Базова мапа",
+      "tunnelsOverlay": "Накладка тунелів",
+      "styleMinimal": "Мінімальна",
+      "styleDetailed": "Детальна",
+      "on": "Увімк.",
+      "off": "Вимк."
+    },
+    "poi": {
+      "cancel": "Скасувати",
+      "complete": "Завершити",
+      "completed": "Завершено"
+    },
+    "info": {
+      "close": "Закрити",
+      "tabs": {
+        "credits": "Подяки",
+        "coffee": "Пожертвувати",
+        "feature": "Контакт"
+      }
+    }
+  },
+  "poi": {
+    "info": "Інфо",
+    "museum-tg": "Музей у Тарновських Гурах",
+    "kopalnia-srebra": "Історична срібна шахта",
+    "gwarek-1": "Статуя шахтаря 1",
+    "gwarek-2": "Статуя шахтаря 2",
+    "gwarek-3": "Статуя шахтаря 3",
+    "gwarek-4": "Статуя шахтаря 4",
+    "gwarek-5": "Статуя шахтаря 5",
+    "gwarek-6": "Статуя шахтаря 6",
+    "gwarek-7": "Статуя шахтаря 7",
+    "gwarek-8": "Статуя шахтаря 8",
+    "gwarek-9": "Статуя шахтаря 9",
+    "gwarek-10": "Статуя шахтаря 10",
+    "gwarek-11": "Статуя шахтаря 11",
+    "gwarek-12": "Статуя шахтаря 12",
+    "photo-1": "Фото 1",
+    "photo-2": "Фото 2"
+  },
+  "embeds": {
+    "photo": {
+      "tip": "Спробуйте сумістити свою позицію з цим фото та подивіться, як змінилося місто.",
+      "title": "Назва фото",
+      "info": "Інформацію про зображення буде додано тут.",
+      "alt": "Історичне фото"
+    },
+    "gwarek": {
+      "title": "Статуя шахтаря",
+      "subtitle": "Поговоріть зі старим шахтарем. Обирайте варіанти, щоб пройти історію.",
+      "imageHint": "Область зображення",
+      "loading": "Завантаження діалогу...",
+      "restart": "Перезапустити",
+      "nodePrefix": "Вузол",
+      "nodeNotFound": "Вузол діалогу не знайдено. Перезапуск.",
+      "loadError": "Не вдалося завантажити JSON діалогу. Переконайтеся, що файл існує та віддається сервером.",
+      "retry": "Спробувати ще раз",
+      "restartConversation": "Почати розмову спочатку",
+      "continue": "Продовжити"
+    },
+    "credits": {
+      "title": "Подяки",
+      "intro": "Чернетка списку подяк. Замініть кожен абзац фінальним зазначенням джерела.",
+      "asset1": "Ресурс 01: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut massa eget velit suscipit semper vitae ac enim.",
+      "asset2": "Ресурс 02: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis tortor sed mi dictum, non efficitur lectus malesuada.",
+      "asset3": "Ресурс 03: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum lacus at purus auctor, ut molestie purus vulputate.",
+      "asset4": "Ресурс 04: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel est et metus volutpat commodo at eget felis.",
+      "asset5": "Ресурс 05: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum risus ac ligula ultrices, nec consequat justo pharetra."
+    },
+    "coffee": {
+      "title": "Пожертвувати",
+      "body": "Якщо вам подобається цей маповий досвід і ви хочете підтримати майбутні оновлення, скористайтеся одним із варіантів донату нижче.",
+      "hint": "Ці кнопки поки що є заглушками і ще не підключені.",
+      "donate2": "Пожертвувати 2 $",
+      "donate5": "Пожертвувати 5 $",
+      "donate10": "Пожертвувати 10 $",
+      "custom": "Власна сума"
+    },
+    "feature": {
+      "title": "Запросити функцію",
+      "intro": "Поділіться ідеєю покращення. Це тимчасова форма, яка поки що нічого не надсилає.",
+      "nameLabel": "Ім'я",
+      "namePlaceholder": "Ваше ім'я",
+      "emailLabel": "Ел. пошта",
+      "emailPlaceholder": "you@example.com",
+      "requestLabel": "Запит функції",
+      "requestPlaceholder": "Що потрібно покращити і чому?",
+      "priorityLabel": "Пріоритет",
+      "priorityPlaceholder": "Низький / Середній / Високий",
+      "budgetLabel": "Орієнтовний бюджет (необов'язково)",
+      "budgetPlaceholder": "напр. 100-300 PLN",
+      "tip": "Порада: додайте скріншоти, очікувану поведінку та місце в застосунку.",
+      "send": "Надіслати запит",
+      "clear": "Очистити"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "app": {
+    "language": {
+      "menuTitle": "Sprache",
+      "openMenu": "Sprache auswählen"
+    },
+    "controls": {
+      "myLocation": "Mein Standort",
+      "centerCity": "Stadtzentrum",
+      "layers": "Kartenebenen",
+      "info": "Informationen",
+      "language": "Sprache"
+    },
+    "location": {
+      "fullExperience": "Für das volle Erlebnis bitte den Standortzugriff erlauben.",
+      "allow": "Standort erlauben",
+      "dismiss": "Schließen",
+      "prompt": "Erlaube den Standortzugriff, um Mein Standort zu nutzen.",
+      "requesting": "Wird angefragt...",
+      "notSupported": "Standort wird in diesem Browser nicht unterstützt.",
+      "failed": "Standortzugriff fehlgeschlagen. Bitte in den Browsereinstellungen erneut versuchen.",
+      "denied": "Standortberechtigung wurde verweigert. Aktiviere sie in den Browsereinstellungen und lade die Seite neu.",
+      "unavailable": "Dein Standort ist aktuell nicht verfügbar. Bitte später erneut versuchen.",
+      "timeout": "Zeitüberschreitung bei der Standortanfrage. Bitte erneut versuchen."
+    },
+    "layers": {
+      "title": "Kartenebenen",
+      "baseMap": "Basiskarte",
+      "tunnelsOverlay": "Tunnel-Overlay",
+      "styleMinimal": "Minimal",
+      "styleDetailed": "Detailliert",
+      "on": "An",
+      "off": "Aus"
+    },
+    "poi": {
+      "cancel": "Abbrechen",
+      "complete": "Fertig",
+      "completed": "Erledigt"
+    },
+    "info": {
+      "close": "Schließen",
+      "tabs": {
+        "credits": "Credits",
+        "coffee": "Spenden",
+        "feature": "Kontakt"
+      }
+    }
+  },
+  "poi": {
+    "info": "Info",
+    "museum-tg": "Museum in Tarnowskie Gory",
+    "kopalnia-srebra": "Historisches Silberbergwerk",
+    "gwarek-1": "Bergmann-Statue 1",
+    "gwarek-2": "Bergmann-Statue 2",
+    "gwarek-3": "Bergmann-Statue 3",
+    "gwarek-4": "Bergmann-Statue 4",
+    "gwarek-5": "Bergmann-Statue 5",
+    "gwarek-6": "Bergmann-Statue 6",
+    "gwarek-7": "Bergmann-Statue 7",
+    "gwarek-8": "Bergmann-Statue 8",
+    "gwarek-9": "Bergmann-Statue 9",
+    "gwarek-10": "Bergmann-Statue 10",
+    "gwarek-11": "Bergmann-Statue 11",
+    "gwarek-12": "Bergmann-Statue 12",
+    "photo-1": "Foto 1",
+    "photo-2": "Foto 2"
+  },
+  "embeds": {
+    "photo": {
+      "tip": "Versuche, deine Position mit diesem Bild abzugleichen und sieh, wie sich die Stadt verändert hat.",
+      "title": "Fototitel",
+      "info": "Bilddetails werden hier ergänzt.",
+      "alt": "Historisches Foto"
+    },
+    "gwarek": {
+      "title": "Bergmann-Statue",
+      "subtitle": "Sprich mit dem alten Bergmann. Wähle Optionen, um der Geschichte zu folgen.",
+      "imageHint": "Bildbereich",
+      "loading": "Dialog wird geladen...",
+      "restart": "Neu starten",
+      "nodePrefix": "Knoten",
+      "nodeNotFound": "Dialogknoten nicht gefunden. Neustart.",
+      "loadError": "Dialog-JSON konnte nicht geladen werden. Stelle sicher, dass die Datei vorhanden ist und vom Server bereitgestellt wird.",
+      "retry": "Erneut versuchen",
+      "restartConversation": "Gespräch neu starten",
+      "continue": "Weiter"
+    },
+    "credits": {
+      "title": "Credits",
+      "intro": "Vorläufige Credit-Liste. Ersetze jeden Absatz durch die endgültigen Quellenangaben.",
+      "asset1": "Asset 01: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut massa eget velit suscipit semper vitae ac enim.",
+      "asset2": "Asset 02: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis tortor sed mi dictum, non efficitur lectus malesuada.",
+      "asset3": "Asset 03: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum lacus at purus auctor, ut molestie purus vulputate.",
+      "asset4": "Asset 04: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel est et metus volutpat commodo at eget felis.",
+      "asset5": "Asset 05: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum risus ac ligula ultrices, nec consequat justo pharetra."
+    },
+    "coffee": {
+      "title": "Spenden",
+      "body": "Wenn dir diese Karten-Erfahrung gefällt und du zukünftige Updates unterstützen möchtest, kannst du über die Optionen unten beitragen.",
+      "hint": "Diese Buttons sind aktuell Platzhalter und noch nicht verbunden.",
+      "donate2": "2 $ spenden",
+      "donate5": "5 $ spenden",
+      "donate10": "10 $ spenden",
+      "custom": "Eigener Betrag"
+    },
+    "feature": {
+      "title": "Funktion vorschlagen",
+      "intro": "Teile eine Idee für Verbesserungen. Dieses Formular ist ein Platzhalter und sendet noch nichts.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Dein Name",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "du@example.com",
+      "requestLabel": "Funktionswunsch",
+      "requestPlaceholder": "Was soll verbessert werden und warum?",
+      "priorityLabel": "Priorität",
+      "priorityPlaceholder": "Niedrig / Mittel / Hoch",
+      "budgetLabel": "Geschätztes Budget (optional)",
+      "budgetPlaceholder": "z. B. 100-300 PLN",
+      "tip": "Tipp: Füge Screenshots, erwartetes Verhalten und den Bereich der App hinzu.",
+      "send": "Anfrage senden",
+      "clear": "Leeren"
+    }
+  }
+}

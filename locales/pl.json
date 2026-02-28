@@ -1,0 +1,124 @@
+{
+  "app": {
+    "language": {
+      "menuTitle": "Język",
+      "openMenu": "Wybierz język"
+    },
+    "controls": {
+      "myLocation": "Moja lokalizacja",
+      "centerCity": "Centrum miasta",
+      "layers": "Warstwy mapy",
+      "info": "Informacje",
+      "language": "Język"
+    },
+    "location": {
+      "fullExperience": "Aby korzystać z pełnej wersji, zezwól na dostęp do lokalizacji.",
+      "allow": "Zezwól na lokalizację",
+      "dismiss": "Zamknij",
+      "prompt": "Zezwól na dostęp do lokalizacji, aby używać przycisku Moja lokalizacja.",
+      "requesting": "Trwa proszenie...",
+      "notSupported": "Lokalizacja nie jest obsługiwana w tej przeglądarce.",
+      "failed": "Nie udało się uzyskać lokalizacji. Spróbuj ponownie w ustawieniach przeglądarki.",
+      "denied": "Odmówiono dostępu do lokalizacji. Włącz ją w ustawieniach przeglądarki i odśwież stronę.",
+      "unavailable": "Twoja lokalizacja jest teraz niedostępna. Spróbuj ponownie za chwilę.",
+      "timeout": "Przekroczono czas oczekiwania na lokalizację. Spróbuj ponownie."
+    },
+    "layers": {
+      "title": "Warstwy mapy",
+      "baseMap": "Mapa bazowa",
+      "tunnelsOverlay": "Nakładka tuneli",
+      "styleMinimal": "Minimalna",
+      "styleDetailed": "Szczegółowa",
+      "on": "Wł.",
+      "off": "Wył."
+    },
+    "poi": {
+      "cancel": "Anuluj",
+      "complete": "Ukończ",
+      "completed": "Ukończono"
+    },
+    "info": {
+      "close": "Zamknij",
+      "tabs": {
+        "credits": "Podziękowania",
+        "coffee": "Wesprzyj",
+        "feature": "Kontakt"
+      }
+    }
+  },
+  "poi": {
+    "info": "Informacje",
+    "museum-tg": "Muzeum w Tarnowskich Górach",
+    "kopalnia-srebra": "Zabytkowa Kopalnia Srebra",
+    "gwarek-1": "Pomnik gwarka 1",
+    "gwarek-2": "Pomnik gwarka 2",
+    "gwarek-3": "Pomnik gwarka 3",
+    "gwarek-4": "Pomnik gwarka 4",
+    "gwarek-5": "Pomnik gwarka 5",
+    "gwarek-6": "Pomnik gwarka 6",
+    "gwarek-7": "Pomnik gwarka 7",
+    "gwarek-8": "Pomnik gwarka 8",
+    "gwarek-9": "Pomnik gwarka 9",
+    "gwarek-10": "Pomnik gwarka 10",
+    "gwarek-11": "Pomnik gwarka 11",
+    "gwarek-12": "Pomnik gwarka 12",
+    "photo-1": "Zdjęcie 1",
+    "photo-2": "Zdjęcie 2"
+  },
+  "embeds": {
+    "photo": {
+      "tip": "Spróbuj dopasować swoją pozycję do tego zdjęcia i zobacz, jak zmieniło się miasto.",
+      "title": "Tytuł zdjęcia",
+      "info": "Szczegóły zdjęcia zostaną dodane tutaj.",
+      "alt": "Zdjęcie historyczne"
+    },
+    "gwarek": {
+      "title": "Pomnik Gwarka",
+      "subtitle": "Porozmawiaj ze starym górnikiem. Wybieraj opcje, aby śledzić historię.",
+      "imageHint": "Miejsce na obraz",
+      "loading": "Wczytywanie dialogu...",
+      "restart": "Restart",
+      "nodePrefix": "Węzeł",
+      "nodeNotFound": "Nie znaleziono węzła dialogu. Restartowanie.",
+      "loadError": "Nie udało się wczytać pliku JSON z dialogiem. Upewnij się, że plik istnieje i jest serwowany przez serwer.",
+      "retry": "Spróbuj ponownie",
+      "restartConversation": "Rozpocznij rozmowę od nowa",
+      "continue": "Kontynuuj"
+    },
+    "credits": {
+      "title": "Podziękowania",
+      "intro": "Lista podziękowań (wersja robocza). Zastąp każdy akapit finalnym opisem źródła.",
+      "asset1": "Zasób 01: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut massa eget velit suscipit semper vitae ac enim.",
+      "asset2": "Zasób 02: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis tortor sed mi dictum, non efficitur lectus malesuada.",
+      "asset3": "Zasób 03: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum lacus at purus auctor, ut molestie purus vulputate.",
+      "asset4": "Zasób 04: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel est et metus volutpat commodo at eget felis.",
+      "asset5": "Zasób 05: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum risus ac ligula ultrices, nec consequat justo pharetra."
+    },
+    "coffee": {
+      "title": "Wesprzyj",
+      "body": "Jeśli podoba Ci się to mapowe doświadczenie i chcesz wesprzeć kolejne aktualizacje, możesz skorzystać z opcji poniżej.",
+      "hint": "Te przyciski są na razie poglądowe i nie są jeszcze podłączone.",
+      "donate2": "Wpłać 2 $",
+      "donate5": "Wpłać 5 $",
+      "donate10": "Wpłać 10 $",
+      "custom": "Własna kwota"
+    },
+    "feature": {
+      "title": "Zaproponuj funkcję",
+      "intro": "Podziel się pomysłem na ulepszenie. To formularz poglądowy i na razie nic nie wysyła.",
+      "nameLabel": "Imię",
+      "namePlaceholder": "Twoje imię",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "ty@example.com",
+      "requestLabel": "Propozycja funkcji",
+      "requestPlaceholder": "Co warto poprawić i dlaczego?",
+      "priorityLabel": "Priorytet",
+      "priorityPlaceholder": "Niski / Średni / Wysoki",
+      "budgetLabel": "Szacowany budżet (opcjonalnie)",
+      "budgetPlaceholder": "np. 100-300 PLN",
+      "tip": "Wskazówka: dodaj zrzuty ekranu, oczekiwane działanie oraz miejsce w aplikacji.",
+      "send": "Wyślij",
+      "clear": "Wyczyść"
+    }
+  }
+}

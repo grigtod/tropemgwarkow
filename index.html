@@ -1,0 +1,140 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Discover TG</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Location banner (hidden unless needed) -->
+    <div id="locationBanner" class="banner banner-hidden" role="dialog" aria-live="polite" aria-label="Location permission">
+      <span id="bannerText">
+        For the full experience, please allow location access.
+      </span>
+      <button id="grantLocationBtn" class="banner-btn" type="button">
+        Allow location
+      </button>
+      <button id="dismissBannerBtn" class="banner-btn banner-btn-secondary" type="button">
+        Dismiss
+      </button>
+    </div>
+
+  
+
+    <div id="layersBanner" class="layers layers-hidden" role="dialog" aria-label="Map layers">
+    <div class="layers-header">
+      <!--div class="layers-handle" aria-hidden="true"></div-->
+      <div class="layers-title">Map Layers</div>
+    </div>
+
+    <div class="layers-grid" role="group" aria-label="Layer options">
+      <button id="styleToggleBtn" class="layer-tile" type="button">
+        <span class="layer-tile-title">Base map</span>
+        <span class="layer-tile-subtitle">Minimal</span>
+      </button>
+
+      <button id="toggleImageOverlayBtn" class="layer-tile" type="button">
+        <span class="layer-tile-title">Tunnels Overlay</span>
+        <span class="layer-tile-subtitle">Off</span>
+      </button>
+    </div>
+  </div>
+ 
+
+    <div id="map"></div>
+
+    <!-- Map buttons -->
+    <div class="map-controls-top-left" aria-label="Language controls">
+      <button id="languageBtn" class="control-btn" type="button" aria-label="Language">
+        &#127468;&#127463;
+      </button>
+    </div>
+
+    <div class="map-controls" aria-label="Map controls">
+      <button id="myLocationBtn" class="control-btn" type="button" disabled>
+       ⚲
+      </button>
+      <button id="centerBtn" class="control-btn" type="button">
+        ◎
+      </button> 
+      <button id="layersShowBtn" class="control-btn" type="button">
+        ☰
+      </button>
+    </div>
+
+    <div id="languageMenu" class="language-menu language-menu-hidden" role="dialog" aria-label="Language">
+      <div id="languageMenuTitle" class="language-menu-title">Language</div>
+      <div id="languageOptions" class="language-options" role="listbox" aria-label="Languages"></div>
+    </div>
+
+    <div class="map-controls-left" aria-label="Info controls">
+      <button id="infoBtn" class="control-btn" type="button" aria-label="Info">
+        &#8505;
+      </button>
+    </div>
+
+    <!-- Too far message -->
+    <!--div id="distanceBanner" class="distance-banner" role="status" aria-live="polite"> 
+      You&#39;re too far from the city center. 
+    </div-->
+
+    <!-- Full screen embedded page overlay -->
+    <div id="poiOverlay" class="poi-overlay poi-overlay-hidden" aria-hidden="true">
+      <div class="poi-overlay-bar">
+      <button id="poiOverlayClose" class="poi-overlay-close" type="button" aria-label="Close">
+        Cancel
+      </button>
+
+      <button id="poiCompleteBtn" class="poi-complete-btn" type="button" aria-pressed="false">
+        <span id="poiCompleteBox" class="poi-complete-box" aria-hidden="true"></span>
+        <span id="poiCompleteLabel">Complete</span>
+      </button>
+    </div>
+      <iframe
+        id="poiOverlayFrame"
+        class="poi-overlay-frame"
+        title="Point of interest"
+        src="about:blank"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+      ></iframe>
+    </div>
+
+    <div id="infoOverlay" class="poi-overlay poi-overlay-hidden" aria-hidden="true">
+      <div class="poi-overlay-bar info-overlay-bar">
+        <button id="infoOverlayClose" class="poi-overlay-close" type="button" aria-label="Close">
+          Close
+        </button>
+        <div class="info-nav" role="tablist" aria-label="Information pages">
+          <button id="infoCreditsBtn" class="info-nav-btn is-active" type="button" role="tab" aria-selected="true">
+            Credits
+          </button>
+          <button id="infoCoffeeBtn" class="info-nav-btn" type="button" role="tab" aria-selected="false">
+            Donate
+          </button>
+          <button id="infoFeatureBtn" class="info-nav-btn" type="button" role="tab" aria-selected="false">
+            Contact
+          </button>
+        </div>
+      </div>
+      <iframe
+        id="infoOverlayFrame"
+        class="poi-overlay-frame"
+        title="Information"
+        src="about:blank"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+      ></iframe>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> 
+    <script type="module" src="src/refs.js"></script>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
+
+
+

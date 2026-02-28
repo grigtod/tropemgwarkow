@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="embeds.css" />
+  </head>
+  <body>
+    <div class="card stack">
+      <h1 data-i18n="embeds.feature.title">Contact</h1>
+      <p class="muted" data-i18n="embeds.feature.intro">
+        Share an improvement idea for this experience. This is a placeholder form and does not submit yet.
+      </p>
+
+      <form class="stack" onsubmit="return false;">
+        <div class="section stack">
+          <div class="field">
+            <label for="name" data-i18n="embeds.feature.nameLabel">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" data-i18n-placeholder="embeds.feature.namePlaceholder" />
+          </div>
+
+          <div class="field">
+            <label for="email" data-i18n="embeds.feature.emailLabel">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" data-i18n-placeholder="embeds.feature.emailPlaceholder" />
+          </div>
+        </div>
+
+        <div class="section stack">
+          <div class="field">
+            <label for="feature" data-i18n="embeds.feature.requestLabel">Feature request</label>
+            <textarea
+              id="feature"
+              name="feature"
+              placeholder="What should be improved and why?"
+              data-i18n-placeholder="embeds.feature.requestPlaceholder"
+            ></textarea>
+          </div>
+
+          <div class="field">
+            <label for="priority" data-i18n="embeds.feature.priorityLabel">Priority</label>
+            <input id="priority" name="priority" type="text" placeholder="Low / Medium / High" data-i18n-placeholder="embeds.feature.priorityPlaceholder" />
+          </div>
+
+          <div class="field">
+            <label for="budget" data-i18n="embeds.feature.budgetLabel">Estimated budget (optional)</label>
+            <input id="budget" name="budget" type="text" placeholder="e.g. 100-300 PLN" data-i18n-placeholder="embeds.feature.budgetPlaceholder" />
+          </div>
+        </div>
+
+        <p class="helper" data-i18n="embeds.feature.tip">
+          Tip: include screenshots, expected behavior, and where in the app this feature belongs.
+        </p>
+
+        <div class="button-row">
+          <button type="submit" data-i18n="embeds.feature.send">Send request</button>
+          <button type="reset" data-i18n="embeds.feature.clear">Clear</button>
+        </div>
+      </form>
+    </div>
+
+    <script type="module">
+      import { initEmbedLocalization } from "./embedLocalization.js";
+      initEmbedLocalization({ titleKey: "embeds.feature.title", titleFallback: "Contact" });
+    </script>
+  </body>
+</html>

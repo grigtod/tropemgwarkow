@@ -1,0 +1,183 @@
+{
+  "start": {
+    "text": "Greetings, traveler. You've found me, a miner from the days when Tarnowskie Góry's veins ran rich with silver and lead. Do you seek tales from beneath the earth?",
+    "options": [
+      { "text": "Yes, tell me about your work.", "next": "work" },
+      { "text": "What was life like in your time?", "next": "life" },
+      { "text": "How did mining shape this town?", "next": "town" }
+    ]
+  },
+
+  "work": {
+    "text": "Our days were long and the depths unforgiving. We extracted galena, the ore of lead and silver. The shafts were damp, and water was our constant adversary. In 1788, a steam engine from England arrived and helped drain the water.",
+    "options": [
+      { "text": "Tell me more about the steam engine.", "next": "steam_engine" },
+      { "text": "What dangers did you face?", "next": "dangers" },
+      { "text": "How did this affect the town?", "next": "town" }
+    ]
+  },
+
+  "life": {
+    "text": "Life above ground was modest. Families were tightly connected to the rhythm of the mine. The Ordunek Górny granted miners rights and attracted workers from across Europe.",
+    "options": [
+      { "text": "What was the Ordunek Górny?", "next": "ordunek" },
+      { "text": "Did many come from afar?", "next": "immigrants" },
+      { "text": "How did families cope?", "next": "families" }
+    ]
+  },
+
+  "town": {
+    "text": "The mine was the heart of Tarnowskie Góry. Its wealth drew scholars, merchants, and nobles. The town prospered when the mines thrived.",
+    "options": [
+      { "text": "Who visited the town?", "next": "visitors" },
+      { "text": "What innovations emerged?", "next": "innovations" },
+      { "text": "Did the town face hardships?", "next": "hardships" }
+    ]
+  },
+
+  "steam_engine": {
+    "text": "Before the engine, horses powered drainage. The steam engine allowed deeper mining and reduced flooding risks.",
+    "options": [
+      { "text": "How did it change daily work?", "next": "daily_tasks" },
+      { "text": "Were there technical challenges?", "next": "challenges" },
+      { "text": "What happened to it later?", "next": "engine_fate" }
+    ]
+  },
+
+  "dangers": {
+    "text": "Cave ins, gas, and flooding were constant threats. Many miners never returned home.",
+    "options": [
+      { "text": "Were there safety measures?", "next": "safety" },
+      { "text": "Did families get support?", "next": "support" },
+      { "text": "How did you cope mentally?", "next": "cope" }
+    ]
+  },
+
+  "ordunek": {
+    "text": "The Ordunek Górny of 1528 established mining law and protected worker rights.",
+    "options": [
+      { "text": "What rights were included?", "next": "rights" },
+      { "text": "Did it help town growth?", "next": "growth" },
+      { "text": "Is it remembered today?", "next": "recognition" }
+    ]
+  },
+
+  "immigrants": {
+    "text": "Miners arrived from Franconia, Bohemia, and beyond, bringing skills and traditions.",
+    "options": [
+      { "text": "Did this cause conflict?", "next": "conflicts" },
+      { "text": "How did cultures blend?", "next": "blend" },
+      { "text": "Are traces visible today?", "next": "influences" }
+    ]
+  },
+
+  "families": {
+    "text": "Families supported each other through hardship. Children often followed mining traditions.",
+    "options": [
+      { "text": "Was there education?", "next": "education" },
+      { "text": "Did families earn income elsewhere?", "next": "income" },
+      { "text": "Did traditions matter?", "next": "traditions" }
+    ]
+  },
+
+  "visitors": {
+    "text": "Scholars and famous thinkers visited to study mining methods.",
+    "options": [
+      { "text": "What did they learn?", "next": "goethe" },
+      { "text": "Did visits improve mining?", "next": "influence" },
+      { "text": "Did visits change the town?", "next": "impacts" }
+    ]
+  },
+
+  "innovations": {
+    "text": "Drainage tunnels and engineering solutions helped mines operate longer and safer.",
+    "options": [
+      { "text": "How were tunnels built?", "next": "construction" },
+      { "text": "Are they still used?", "next": "functional" },
+      { "text": "Did other regions copy this?", "next": "adoption" }
+    ]
+  },
+
+  "hardships": {
+    "text": "War, disease, and fires tested the town repeatedly.",
+    "options": [
+      { "text": "How did people rebuild?", "next": "recover" },
+      { "text": "Was there organized help?", "next": "systems" },
+      { "text": "Did mining change afterward?", "next": "change" }
+    ]
+  },
+
+  "daily_tasks": {
+    "text": "Less time draining water meant more time mining ore efficiently.",
+    "options": [
+      { "text": "Did output increase?", "next": "production" },
+      { "text": "Were there downsides?", "next": "downsides" },
+      { "text": "How did miners adapt?", "next": "adapt" }
+    ]
+  },
+
+  "challenges": {
+    "text": "Engines required fuel, maintenance, and trained operators.",
+    "options": [
+      { "text": "Where did coal come from?", "next": "coal" },
+      { "text": "Were there accidents?", "next": "accidents" },
+      { "text": "Did this inspire new machines?", "next": "inspiration" }
+    ]
+  },
+
+  "engine_fate": {
+    "text": "Eventually mining slowed, and the engine was retired.",
+    "options": [
+      { "text": "Is it commemorated?", "next": "commemorated" },
+      { "text": "Did it influence industry?", "next": "industries" },
+      { "text": "Do models exist?", "next": "replicas" }
+    ]
+  },
+
+  "safety": { "text": "Simple supports and ventilation were used, but risk remained.", "options": [{ "text": "Continue", "next": "end" }] },
+  "support": { "text": "Mining guilds and neighbors supported families of injured miners.", "options": [{ "text": "Continue", "next": "end" }] },
+  "cope": { "text": "Faith, brotherhood, and routine helped miners endure fear.", "options": [{ "text": "Continue", "next": "end" }] },
+
+  "rights": { "text": "Rights included wages protection and legal structure for disputes.", "options": [{ "text": "Continue", "next": "end" }] },
+  "growth": { "text": "It attracted skilled labor and investment.", "options": [{ "text": "Continue", "next": "end" }] },
+  "recognition": { "text": "It is remembered as a milestone in mining law.", "options": [{ "text": "Continue", "next": "end" }] },
+
+  "conflicts": { "text": "Occasional disputes occurred, but shared work united miners.", "options": [{ "text": "Continue", "next": "end" }] },
+  "blend": { "text": "Languages, recipes, and traditions merged over generations.", "options": [{ "text": "Continue", "next": "end" }] },
+  "influences": { "text": "Architecture and surnames still reflect this diversity.", "options": [{ "text": "Continue", "next": "end" }] },
+
+  "education": { "text": "Later, technical mining education appeared in the region.", "options": [{ "text": "Continue", "next": "end" }] },
+  "income": { "text": "Some families farmed or crafted tools.", "options": [{ "text": "Continue", "next": "end" }] },
+  "traditions": { "text": "Mining festivals reinforced identity and unity.", "options": [{ "text": "Continue", "next": "end" }] },
+
+  "goethe": { "text": "Visitors studied geology and industrial engineering methods.", "options": [{ "text": "Continue", "next": "end" }] },
+  "influence": { "text": "Knowledge exchange improved mining efficiency.", "options": [{ "text": "Continue", "next": "end" }] },
+  "impacts": { "text": "The town gained prestige and investment.", "options": [{ "text": "Continue", "next": "end" }] },
+
+  "construction": { "text": "Tunnels were hand carved with careful surveying.", "options": [{ "text": "Continue", "next": "end" }] },
+  "functional": { "text": "Some tunnels survive as historical heritage sites.", "options": [{ "text": "Continue", "next": "end" }] },
+  "adoption": { "text": "Other mining towns studied these drainage solutions.", "options": [{ "text": "Continue", "next": "end" }] },
+
+  "recover": { "text": "Community labor rebuilt homes and infrastructure.", "options": [{ "text": "Continue", "next": "end" }] },
+  "systems": { "text": "Guilds and churches organized relief efforts.", "options": [{ "text": "Continue", "next": "end" }] },
+  "change": { "text": "Mining planning improved after disasters.", "options": [{ "text": "Continue", "next": "end" }] },
+
+  "production": { "text": "Yes, deeper mining expanded silver output.", "options": [{ "text": "Continue", "next": "end" }] },
+  "downsides": { "text": "Dependence on fuel and machinery increased costs.", "options": [{ "text": "Continue", "next": "end" }] },
+  "adapt": { "text": "New technical roles emerged among miners.", "options": [{ "text": "Continue", "next": "end" }] },
+
+  "coal": { "text": "Coal was transported from regional mines.", "options": [{ "text": "Continue", "next": "end" }] },
+  "accidents": { "text": "Mechanical failures were rare but dangerous.", "options": [{ "text": "Continue", "next": "end" }] },
+  "inspiration": { "text": "Steam power spread to other industries.", "options": [{ "text": "Continue", "next": "end" }] },
+
+  "commemorated": { "text": "Historical exhibits remember early mining technology.", "options": [{ "text": "Continue", "next": "end" }] },
+  "industries": { "text": "Steam technology accelerated industrial growth.", "options": [{ "text": "Continue", "next": "end" }] },
+  "replicas": { "text": "Some museums display scale models.", "options": [{ "text": "Continue", "next": "end" }] },
+
+  "end": {
+    "text": "Thank you for listening to my tales. May the spirit of Tarnowskie Góry's miners live on in your heart.",
+    "options": [
+      { "text": "Restart conversation", "next": "start" }
+    ]
+  }
+}

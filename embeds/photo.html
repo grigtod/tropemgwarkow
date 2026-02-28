@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo</title>
+    <link rel="stylesheet" href="embeds.css" />
+  </head>
+  <body>
+    <div class="card">
+      <p class="muted" data-i18n="embeds.photo.tip">
+        Try to align your position to this image and check how the city has changed.
+      </p>
+      <img
+        id="image"
+        src="./photographs/NA.jpg"
+        alt="Historical photo"
+        style="max-width:100%;max-height:100%;"
+      />
+      <h1 data-i18n="embeds.photo.title">Photo title</h1>
+      <p class="muted" data-i18n="embeds.photo.info">Image details will be added here.</p>
+    </div>
+
+    <script type="module">
+      import { initEmbedLocalization } from "./embedLocalization.js";
+
+      const { t } = await initEmbedLocalization({
+        titleKey: "embeds.photo.title",
+        titleFallback: "Photo"
+      });
+
+      const imageEl = document.getElementById("image");
+      imageEl.alt = t("embeds.photo.alt", "Historical photo");
+
+      const params = new URLSearchParams(window.location.search);
+      const poiId = params.get("poiId");
+      if (poiId) {
+        imageEl.src = `./photographs/${poiId}.jpg`;
+      }
+    </script>
+  </body>
+</html>

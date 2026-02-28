@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credits</title>
+    <link rel="stylesheet" href="embeds.css" />
+  </head>
+  <body>
+    <div class="card stack">
+      <h1 data-i18n="embeds.credits.title">Credits</h1>
+      <p class="muted" data-i18n="embeds.credits.intro">
+        Placeholder credits list. Replace each paragraph with final attribution details.
+      </p>
+
+      <p data-i18n="embeds.credits.asset1"></p>
+      <p data-i18n="embeds.credits.asset2"></p>
+      <p data-i18n="embeds.credits.asset3"></p>
+      <p data-i18n="embeds.credits.asset4"></p>
+      <p data-i18n="embeds.credits.asset5"></p>
+    </div>
+
+    <script type="module">
+      import { initEmbedLocalization } from "./embedLocalization.js";
+      initEmbedLocalization({ titleKey: "embeds.credits.title", titleFallback: "Credits" });
+    </script>
+  </body>
+</html>

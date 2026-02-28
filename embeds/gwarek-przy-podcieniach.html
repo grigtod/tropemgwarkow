@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gwarek przy podcieniach</title>
+    <link rel="stylesheet" href="embeds.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>🗿 Gwarek przy podcieniach</h1>
+      <p class="muted">Another independent embedded page. Different logic can live here.</p>
+
+      <button id="showTimeBtn" type="button">Show current time</button>
+      <p id="timeText" class="muted"></p>
+    </div>
+
+    <script>
+      const timeText = document.getElementById("timeText");
+      document.getElementById("showTimeBtn").addEventListener("click", () => {
+        timeText.textContent = "Time: " + new Date().toLocaleString();
+      });
+    </script>
+  </body>
+</html>

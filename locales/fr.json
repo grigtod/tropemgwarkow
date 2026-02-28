@@ -1,0 +1,124 @@
+{
+  "app": {
+    "language": {
+      "menuTitle": "Langue",
+      "openMenu": "Choisir la langue"
+    },
+    "controls": {
+      "myLocation": "Ma position",
+      "centerCity": "Centre-ville",
+      "layers": "Couches de la carte",
+      "info": "Informations",
+      "language": "Langue"
+    },
+    "location": {
+      "fullExperience": "Pour profiter pleinement de l'expérience, veuillez autoriser l'accès à la localisation.",
+      "allow": "Autoriser la localisation",
+      "dismiss": "Fermer",
+      "prompt": "Autorisez l'accès à la localisation pour utiliser Ma position.",
+      "requesting": "Demande en cours...",
+      "notSupported": "La localisation n'est pas prise en charge par ce navigateur.",
+      "failed": "Échec de l'accès à la localisation. Réessayez depuis les paramètres du navigateur.",
+      "denied": "L'autorisation de localisation a été refusée. Activez-la dans les paramètres du navigateur puis rechargez la page.",
+      "unavailable": "Votre localisation est indisponible pour le moment. Réessayez dans un instant.",
+      "timeout": "La demande de localisation a expiré. Réessayez."
+    },
+    "layers": {
+      "title": "Couches de la carte",
+      "baseMap": "Carte de base",
+      "tunnelsOverlay": "Superposition des tunnels",
+      "styleMinimal": "Minimal",
+      "styleDetailed": "Détaillé",
+      "on": "Activé",
+      "off": "Désactivé"
+    },
+    "poi": {
+      "cancel": "Annuler",
+      "complete": "Terminer",
+      "completed": "Terminé"
+    },
+    "info": {
+      "close": "Fermer",
+      "tabs": {
+        "credits": "Crédits",
+        "coffee": "Faire un don",
+        "feature": "Contact"
+      }
+    }
+  },
+  "poi": {
+    "info": "Infos",
+    "museum-tg": "Musée de Tarnowskie Gory",
+    "kopalnia-srebra": "Mine d'argent historique",
+    "gwarek-1": "Statue du mineur 1",
+    "gwarek-2": "Statue du mineur 2",
+    "gwarek-3": "Statue du mineur 3",
+    "gwarek-4": "Statue du mineur 4",
+    "gwarek-5": "Statue du mineur 5",
+    "gwarek-6": "Statue du mineur 6",
+    "gwarek-7": "Statue du mineur 7",
+    "gwarek-8": "Statue du mineur 8",
+    "gwarek-9": "Statue du mineur 9",
+    "gwarek-10": "Statue du mineur 10",
+    "gwarek-11": "Statue du mineur 11",
+    "gwarek-12": "Statue du mineur 12",
+    "photo-1": "Photo 1",
+    "photo-2": "Photo 2"
+  },
+  "embeds": {
+    "photo": {
+      "tip": "Essayez d'aligner votre position avec cette image et voyez comment la ville a changé.",
+      "title": "Titre de la photo",
+      "info": "Les informations de l'image seront ajoutées ici.",
+      "alt": "Photo historique"
+    },
+    "gwarek": {
+      "title": "Statue du mineur",
+      "subtitle": "Parlez au vieux mineur. Choisissez des options pour suivre l'histoire.",
+      "imageHint": "Zone d'image",
+      "loading": "Chargement du dialogue...",
+      "restart": "Redémarrer",
+      "nodePrefix": "Nœud",
+      "nodeNotFound": "Nœud de dialogue introuvable. Redémarrage.",
+      "loadError": "Impossible de charger le JSON du dialogue. Vérifiez que le fichier existe et qu'il est servi par votre serveur.",
+      "retry": "Réessayer",
+      "restartConversation": "Recommencer la conversation",
+      "continue": "Continuer"
+    },
+    "credits": {
+      "title": "Crédits",
+      "intro": "Liste de crédits provisoire. Remplacez chaque paragraphe par l'attribution finale correspondante.",
+      "asset1": "Ressource 01: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut massa eget velit suscipit semper vitae ac enim.",
+      "asset2": "Ressource 02: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis tortor sed mi dictum, non efficitur lectus malesuada.",
+      "asset3": "Ressource 03: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum lacus at purus auctor, ut molestie purus vulputate.",
+      "asset4": "Ressource 04: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel est et metus volutpat commodo at eget felis.",
+      "asset5": "Ressource 05: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum risus ac ligula ultrices, nec consequat justo pharetra."
+    },
+    "coffee": {
+      "title": "Faire un don",
+      "body": "Si vous aimez cette expérience cartographique et souhaitez soutenir les prochaines mises à jour, vous pouvez contribuer via les options ci-dessous.",
+      "hint": "Ces boutons sont des espaces réservés pour l'instant et ne sont pas encore connectés.",
+      "donate2": "Donner 2 $",
+      "donate5": "Donner 5 $",
+      "donate10": "Donner 10 $",
+      "custom": "Montant personnalisé"
+    },
+    "feature": {
+      "title": "Demander une fonctionnalité",
+      "intro": "Partagez une idée d'amélioration. Ce formulaire est un espace réservé et n'envoie encore rien.",
+      "nameLabel": "Nom",
+      "namePlaceholder": "Votre nom",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "requestLabel": "Demande de fonctionnalité",
+      "requestPlaceholder": "Que faut-il améliorer et pourquoi ?",
+      "priorityLabel": "Priorité",
+      "priorityPlaceholder": "Basse / Moyenne / Haute",
+      "budgetLabel": "Budget estimé (optionnel)",
+      "budgetPlaceholder": "ex. 100-300 PLN",
+      "tip": "Astuce : ajoutez des captures, le comportement attendu et l'endroit de l'application concerné.",
+      "send": "Envoyer la demande",
+      "clear": "Effacer"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate</title>
+    <link rel="stylesheet" href="embeds.css" />
+  </head>
+  <body>
+    <div class="card stack">
+      <h1 data-i18n="embeds.coffee.title">Donate</h1>
+      <p data-i18n="embeds.coffee.body">
+        If you enjoy this map experience and want to support future updates, you can contribute through one of the donation options below.
+      </p>
+      <p class="muted" data-i18n="embeds.coffee.hint">
+        These buttons are placeholders for now and are not connected yet.
+      </p>
+
+      <div class="button-row">
+        <button type="button" data-i18n="embeds.coffee.donate2">Donate $2</button>
+        <button type="button" data-i18n="embeds.coffee.donate5">Donate $5</button>
+        <button type="button" data-i18n="embeds.coffee.donate10">Donate $10</button>
+        <button type="button" data-i18n="embeds.coffee.custom">Custom amount</button>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initEmbedLocalization } from "./embedLocalization.js";
+      initEmbedLocalization({ titleKey: "embeds.coffee.title", titleFallback: "Donate" });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+{
+  "app": {
+    "language": {
+      "menuTitle": "Idioma",
+      "openMenu": "Elegir idioma"
+    },
+    "controls": {
+      "myLocation": "Mi ubicación",
+      "centerCity": "Centro de la ciudad",
+      "layers": "Capas del mapa",
+      "info": "Información",
+      "language": "Idioma"
+    },
+    "location": {
+      "fullExperience": "Para disfrutar de la experiencia completa, permite el acceso a la ubicación.",
+      "allow": "Permitir ubicación",
+      "dismiss": "Cerrar",
+      "prompt": "Permite el acceso a la ubicación para usar Mi ubicación.",
+      "requesting": "Solicitando...",
+      "notSupported": "La ubicación no es compatible con este navegador.",
+      "failed": "No se pudo acceder a la ubicación. Vuelve a intentarlo desde la configuración del navegador.",
+      "denied": "Se denegó el permiso de ubicación. Actívalo en la configuración del navegador y recarga la página.",
+      "unavailable": "Tu ubicación no está disponible en este momento. Inténtalo de nuevo en un momento.",
+      "timeout": "La solicitud de ubicación superó el tiempo de espera. Inténtalo de nuevo."
+    },
+    "layers": {
+      "title": "Capas del mapa",
+      "baseMap": "Mapa base",
+      "tunnelsOverlay": "Capa de túneles",
+      "styleMinimal": "Minimalista",
+      "styleDetailed": "Detallado",
+      "on": "Activado",
+      "off": "Desactivado"
+    },
+    "poi": {
+      "cancel": "Cancelar",
+      "complete": "Completar",
+      "completed": "Completado"
+    },
+    "info": {
+      "close": "Cerrar",
+      "tabs": {
+        "credits": "Créditos",
+        "coffee": "Donar",
+        "feature": "Contacto"
+      }
+    }
+  },
+  "poi": {
+    "info": "Información",
+    "museum-tg": "Museo en Tarnowskie Gory",
+    "kopalnia-srebra": "Mina Histórica de Plata",
+    "gwarek-1": "Estatua del minero 1",
+    "gwarek-2": "Estatua del minero 2",
+    "gwarek-3": "Estatua del minero 3",
+    "gwarek-4": "Estatua del minero 4",
+    "gwarek-5": "Estatua del minero 5",
+    "gwarek-6": "Estatua del minero 6",
+    "gwarek-7": "Estatua del minero 7",
+    "gwarek-8": "Estatua del minero 8",
+    "gwarek-9": "Estatua del minero 9",
+    "gwarek-10": "Estatua del minero 10",
+    "gwarek-11": "Estatua del minero 11",
+    "gwarek-12": "Estatua del minero 12",
+    "photo-1": "Foto 1",
+    "photo-2": "Foto 2"
+  },
+  "embeds": {
+    "photo": {
+      "tip": "Intenta alinear tu posición con esta imagen y observa cómo ha cambiado la ciudad.",
+      "title": "Título de la foto",
+      "info": "Los detalles de la imagen se añadirán aquí.",
+      "alt": "Foto histórica"
+    },
+    "gwarek": {
+      "title": "Estatua del minero",
+      "subtitle": "Habla con el viejo minero. Elige opciones para seguir la historia.",
+      "imageHint": "Espacio de imagen",
+      "loading": "Cargando diálogo...",
+      "restart": "Reiniciar",
+      "nodePrefix": "Nodo",
+      "nodeNotFound": "No se encontró el nodo del diálogo. Reiniciando.",
+      "loadError": "No se pudo cargar el JSON del diálogo. Asegúrate de que el archivo exista y se sirva desde tu servidor.",
+      "retry": "Reintentar",
+      "restartConversation": "Reiniciar conversación",
+      "continue": "Continuar"
+    },
+    "credits": {
+      "title": "Créditos",
+      "intro": "Lista de créditos provisional. Sustituye cada párrafo por la atribución final correspondiente.",
+      "asset1": "Recurso 01: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut massa eget velit suscipit semper vitae ac enim.",
+      "asset2": "Recurso 02: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis tortor sed mi dictum, non efficitur lectus malesuada.",
+      "asset3": "Recurso 03: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum lacus at purus auctor, ut molestie purus vulputate.",
+      "asset4": "Recurso 04: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel est et metus volutpat commodo at eget felis.",
+      "asset5": "Recurso 05: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum risus ac ligula ultrices, nec consequat justo pharetra."
+    },
+    "coffee": {
+      "title": "Donar",
+      "body": "Si disfrutas esta experiencia de mapa y quieres apoyar futuras mejoras, puedes contribuir usando una de las opciones de donación.",
+      "hint": "Estos botones son solo de ejemplo por ahora y todavía no están conectados.",
+      "donate2": "Donar 2 $",
+      "donate5": "Donar 5 $",
+      "donate10": "Donar 10 $",
+      "custom": "Cantidad personalizada"
+    },
+    "feature": {
+      "title": "Solicitar función",
+      "intro": "Comparte una idea de mejora para esta experiencia. Este formulario es provisional y todavía no envía datos.",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "requestLabel": "Solicitud de función",
+      "requestPlaceholder": "¿Qué se debería mejorar y por qué?",
+      "priorityLabel": "Prioridad",
+      "priorityPlaceholder": "Baja / Media / Alta",
+      "budgetLabel": "Presupuesto estimado (opcional)",
+      "budgetPlaceholder": "p. ej. 100-300 PLN",
+      "tip": "Consejo: incluye capturas, comportamiento esperado y en qué parte de la app debe aparecer.",
+      "send": "Enviar solicitud",
+      "clear": "Limpiar"
+    }
+  }
+}

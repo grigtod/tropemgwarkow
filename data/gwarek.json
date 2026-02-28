@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "id": "gwarek-1",
+      "lat": 50.444167,
+      "lon": 18.858917,
+      "label": "Gwarek 1"
+    },
+    {
+      "id": "gwarek-2",
+      "lat": 50.447139,
+      "lon": 18.863111,
+      "label": "Gwarek 2"
+    },
+    {
+      "id": "gwarek-3",
+      "lat": 50.444528,
+      "lon": 18.854861,
+      "label": "Gwarek 3"
+    },
+    {
+      "id": "gwarek-4",
+      "lat": 50.442889,
+      "lon": 18.856861,
+      "label": "Gwarek 4"
+    },
+    {
+      "id": "gwarek-5",
+      "lat": 50.445444,
+      "lon": 18.853139,
+      "label": "Gwarek 5"
+    },
+    {
+      "id": "gwarek-6",
+      "lat": 50.423583,
+      "lon": 18.864611,
+      "label": "Gwarek 6"
+    },
+    {
+      "id": "gwarek-7",
+      "lat": 50.420194,
+      "lon": 18.817417,
+      "label": "Gwarek 7"
+    },
+    {
+      "id": "gwarek-8",
+      "lat": 50.439944,
+      "lon": 18.819472,
+      "label": "Gwarek 8"
+    },
+    {
+      "id": "gwarek-9",
+      "lat": 50.456194,
+      "lon": 18.8155,
+      "label": "Gwarek 9"
+    },
+    {
+      "id": "gwarek-10",
+      "lat": 50.438583,
+      "lon": 18.866111,
+      "label": "Gwarek 10"
+    },
+    {
+      "id": "gwarek-11",
+      "lat": 50.495111,
+      "lon": 18.817667,
+      "label": "Gwarek 11"
+    },
+    {
+      "id": "gwarek-12",
+      "lat": 50.450444,
+      "lon": 18.88175,
+      "label": "Gwarek 12"
+    }
+  ]
+}

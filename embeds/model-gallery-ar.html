@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Gallery + AR</title>
+
+    <!-- model-viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <style>
+      :root {
+        --border: rgba(0, 0, 0, 0.12);
+        --muted: rgba(0, 0, 0, 0.65);
+      }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: #fff;
+      }
+
+      .page {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      header p {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .content {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        min-height: 0;
+      }
+
+      .viewer {
+        border-right: 1px solid var(--border);
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      model-viewer {
+        width: 100%;
+        height: 100%;
+        background: #fafafa;
+      }
+
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+      }
+
+      .sidebar-top {
+        padding: 12px 12px 10px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .meta-title {
+        font-weight: 600;
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .meta-desc {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .gallery {
+        padding: 12px;
+        overflow: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-content: start;
+      }
+
+      .thumb {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .thumb img {
+        width: 100%;
+        height: 110px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .thumb .label {
+        padding: 8px 10px;
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.85);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .thumb[aria-selected="true"] {
+        outline: 2px solid rgba(0, 0, 0, 0.35);
+        outline-offset: 2px;
+      }
+
+      .actions {
+        padding: 12px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        background: #fff;
+        padding: 10px 12px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .btn:hover {
+        background: rgba(0, 0, 0, 0.04);
+      }
+
+      .note {
+        padding: 0 12px 12px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      @media (max-width: 920px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+        .viewer {
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          height: 55vh;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>
+        <h1>3D Model Gallery</h1>
+        <p>Select an item to view it in 3D. Use AR if your device supports it.</p>
+      </header>
+
+      <div class="content">
+        <div class="viewer">
+          <model-viewer
+            id="mv"
+            src=""
+            alt="3D model"
+            camera-controls
+            touch-action="pan-y"
+            shadow-intensity="1"
+            exposure="1"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            ar-scale="auto"
+            autoplay
+          >
+            <!-- If you want a custom AR button, we use one below -->
+          </model-viewer>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-top">
+            <p id="modelTitle" class="meta-title"></p>
+            <p id="modelDesc" class="meta-desc"></p>
+          </div>
+
+          <div id="gallery" class="gallery" role="listbox" aria-label="Model gallery"></div>
+
+          <div class="actions">
+            <button id="arBtn" class="btn" type="button">View in AR</button>
+            <button id="resetBtn" class="btn" type="button">Reset view</button>
+          </div>
+
+          <div class="note">
+            AR notes:
+            <br />
+            Android typically uses Scene Viewer. iOS uses Quick Look and often needs a USDZ file.
+            If AR does nothing, it likely means the current model does not have a compatible AR asset.
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      // Put your real assets here.
+      // - glb: required for 3D
+      // - usdz: recommended for iOS AR
+      // - poster: optional thumbnail image (also used in the gallery)
+      const MODELS = [
+        {
+          id: "statue-a",
+          title: "Statue A",
+          desc: "Example GLB model. Add USDZ for best iOS AR support.",
+          glb: "./assets/models/Sculpture_of_Gwarek.glb",
+          usdz: "./assets/models/Sculpture_of_Gwarek.usdz",
+          poster: "./assets/models/Sculpture_of_Gwarek.jpg"
+        },
+        {
+          id: "statue-b",
+          title: "Statue B",
+          desc: "Another example. You can omit usdz if you only care about Android AR.",
+          glb: "./assets/models/2.glb",
+          usdz: "./assets/models/2.usdz",
+          poster: "./assets/models/Sculpture_of_Gwarek.jpg"
+        },
+        {
+          id: "statue-c",
+          title: "Statue C",
+          desc: "Third example.",
+          glb: "./assets/models/3.glb",
+          usdz: "./assets/models/3.usdz",
+          poster: "./assets/models/Sculpture_of_Gwarek.jpg"
+        }
+      ];
+
+      const mv = document.getElementById("mv");
+      const gallery = document.getElementById("gallery");
+      const modelTitle = document.getElementById("modelTitle");
+      const modelDesc = document.getElementById("modelDesc");
+      const arBtn = document.getElementById("arBtn");
+      const resetBtn = document.getElementById("resetBtn");
+
+      let selectedId = null;
+
+      function setSelected(model) {
+        selectedId = model.id;
+
+        // Update viewer
+        mv.src = model.glb;
+        mv.setAttribute("alt", model.title);
+
+        // For iOS AR, Quick Look uses usdz
+        if (model.usdz) {
+          mv.setAttribute("ios-src", model.usdz);
+        } else {
+          mv.removeAttribute("ios-src");
+        }
+
+        if (model.poster) {
+          mv.setAttribute("poster", model.poster);
+        } else {
+          mv.removeAttribute("poster");
+        }
+
+        // Update meta
+        modelTitle.textContent = model.title;
+        modelDesc.textContent = model.desc;
+
+        // Update gallery selection state
+        for (const el of gallery.querySelectorAll(".thumb")) {
+          el.setAttribute("aria-selected", el.dataset.id === selectedId ? "true" : "false");
+        }
+      }
+
+      function buildGallery() {
+        gallery.innerHTML = "";
+        for (const model of MODELS) {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "thumb";
+          btn.dataset.id = model.id;
+          btn.setAttribute("role", "option");
+          btn.setAttribute("aria-selected", "false");
+          btn.title = model.title;
+
+          const img = document.createElement("img");
+          img.src = model.poster || "";
+          img.alt = model.title;
+
+          const label = document.createElement("div");
+          label.className = "label";
+          label.textContent = model.title;
+
+          btn.appendChild(img);
+          btn.appendChild(label);
+
+          btn.addEventListener("click", () => setSelected(model));
+          gallery.appendChild(btn);
+        }
+      }
+
+      arBtn.addEventListener("click", async () => {
+        // model-viewer exposes activateAR() when AR is supported
+        if (typeof mv.activateAR === "function") {
+          try {
+            await mv.activateAR();
+          } catch {
+            // No-op: typically fails when not supported or missing assets
+            alert("AR is not available for this model or on this device.");
+          }
+        } else {
+          alert("AR is not supported on this device/browser.");
+        }
+      });
+
+      resetBtn.addEventListener("click", () => {
+        // resetTurntableRotation is not universal, so we use camera controls reset
+        // This returns to the default camera view if the model has loaded.
+        if (typeof mv.resetTurntableRotation === "function") {
+          mv.resetTurntableRotation();
+        }
+        if (typeof mv.jumpCameraToGoal === "function") {
+          mv.jumpCameraToGoal();
+        }
+      });
+
+      // Init
+      buildGallery();
+      setSelected(MODELS[0]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miner Statue</title>
+    <link rel="stylesheet" href="embeds.css" />
+
+    <style>
+      .card {
+        max-width: 720px;
+        margin: 24px auto;
+        padding: 20px;
+        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        background: white;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      }
+      .muted {
+        opacity: 0.75;
+      }
+      .image-slot {
+        width: 100%;
+        height: 420px;
+        border-radius: 14px;
+        border: 1px dashed rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.03);
+        margin: 12px 0 16px;
+      }
+      .image-slot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+      }
+      .miner-text {
+        font-size: 1.05rem;
+        line-height: 1.5;
+        margin: 12px 0 18px;
+        white-space: pre-wrap;
+      }
+      .options {
+        display: grid;
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .options button {
+        width: 100%;
+        text-align: left;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        background: white;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .options button:hover {
+        background: rgba(0, 0, 0, 0.04);
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .small-btn {
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        background: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1 data-i18n="embeds.gwarek.title">Miner Statue</h1>
+      <p class="muted" data-i18n="embeds.gwarek.subtitle">
+        Talk to the old miner. Choose options to follow the story.
+      </p>
+
+      <div class="image-slot" id="imageSlot" data-i18n-aria-label="embeds.gwarek.imageHint" aria-label="Image area">
+        <img id="minerImg" alt="Miner" />
+        <span class="muted" id="imageHint" data-i18n="embeds.gwarek.imageHint">Image area</span>
+      </div>
+
+      <p class="miner-text" id="minerText" data-i18n="embeds.gwarek.loading">Loading dialogue...</p>
+      <div class="options" id="options"></div>
+
+      <div class="row">
+        <button class="small-btn" id="restartBtn" type="button" data-i18n="embeds.gwarek.restart">Restart</button>
+        <span class="muted" id="debugNode"></span>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initEmbedLocalization } from "./embedLocalization.js";
+
+      const { t } = await initEmbedLocalization({
+        titleKey: "embeds.gwarek.title",
+        titleFallback: "Miner Statue"
+      });
+
+      const DIALOGUE_URL = "dialoguetrees/test.json";
+
+      let dialogue = null;
+      let currentNodeId = "start";
+
+      const minerTextEl = document.getElementById("minerText");
+      const optionsEl = document.getElementById("options");
+      const restartBtn = document.getElementById("restartBtn");
+      const debugNodeEl = document.getElementById("debugNode");
+      const params = new URLSearchParams(window.location.search);
+      const poiId = params.get("poiId");
+      const minerImageUrl = poiId ? `./assets/statues/${poiId}.jpg` : "NA";
+
+      const minerImgEl = document.getElementById("minerImg");
+      const imageHintEl = document.getElementById("imageHint");
+
+      minerImgEl.alt = t("embeds.gwarek.title", "Miner Statue");
+
+      function setupImage() {
+        if (minerImageUrl && typeof minerImageUrl === "string") {
+          minerImgEl.src = minerImageUrl;
+          minerImgEl.style.display = "block";
+          imageHintEl.style.display = "none";
+        } else {
+          minerImgEl.removeAttribute("src");
+          minerImgEl.style.display = "none";
+          imageHintEl.style.display = "block";
+        }
+      }
+
+      function safeGetNode(id) {
+        if (!dialogue) return null;
+        return dialogue[id] || null;
+      }
+
+      function setNode(id) {
+        const node = safeGetNode(id);
+        currentNodeId = node ? id : dialogue && dialogue.end ? "end" : "start";
+        render();
+      }
+
+      function clearOptions() {
+        while (optionsEl.firstChild) optionsEl.removeChild(optionsEl.firstChild);
+      }
+
+      function addOptionButton(label, nextId) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = label;
+        btn.addEventListener("click", () => setNode(nextId));
+        optionsEl.appendChild(btn);
+      }
+
+      function render() {
+        const node = safeGetNode(currentNodeId);
+
+        if (!node) {
+          minerTextEl.textContent = t("embeds.gwarek.nodeNotFound", "Dialogue node not found. Restarting.");
+          clearOptions();
+          addOptionButton(t("embeds.gwarek.restart", "Restart"), "start");
+          return;
+        }
+
+        minerTextEl.textContent = node.text || "";
+        clearOptions();
+
+        const opts = Array.isArray(node.options) ? node.options : [];
+
+        if (opts.length === 0) {
+          if (currentNodeId !== "start") {
+            addOptionButton(t("embeds.gwarek.restartConversation", "Restart conversation"), "start");
+          } else {
+            addOptionButton(t("embeds.gwarek.continue", "Continue"), "end");
+          }
+        } else {
+          for (const opt of opts) {
+            if (!opt || typeof opt.text !== "string" || typeof opt.next !== "string") continue;
+            addOptionButton(opt.text, opt.next);
+          }
+
+          if (optionsEl.childElementCount === 0) {
+            addOptionButton(t("embeds.gwarek.restartConversation", "Restart conversation"), "start");
+          }
+        }
+
+        debugNodeEl.textContent = `${t("embeds.gwarek.nodePrefix", "Node")}: ${currentNodeId}`;
+      }
+
+      async function init() {
+        setupImage();
+
+        try {
+          const res = await fetch(DIALOGUE_URL, { cache: "no-store" });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          dialogue = await res.json();
+
+          if (!dialogue.start) {
+            const keys = Object.keys(dialogue);
+            currentNodeId = keys.includes("start") ? "start" : (keys[0] || "start");
+          } else {
+            currentNodeId = "start";
+          }
+
+          render();
+        } catch (err) {
+          minerTextEl.textContent = t(
+            "embeds.gwarek.loadError",
+            "Could not load dialogue JSON. Make sure the dialogue file exists and is served by your web server."
+          );
+          clearOptions();
+          addOptionButton(t("embeds.gwarek.retry", "Retry"), "start");
+          console.error(err);
+        }
+      }
+
+      restartBtn.addEventListener("click", () => setNode("start"));
+      init();
+    </script>
+  </body>
+</html>

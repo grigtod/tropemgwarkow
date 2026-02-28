@@ -1,0 +1,124 @@
+{
+  "app": {
+    "language": {
+      "menuTitle": "Language",
+      "openMenu": "Choose language"
+    },
+    "controls": {
+      "myLocation": "My location",
+      "centerCity": "Center city",
+      "layers": "Map layers",
+      "info": "Information",
+      "language": "Language"
+    },
+    "location": {
+      "fullExperience": "For the full experience, please allow location access.",
+      "allow": "Allow location",
+      "dismiss": "Dismiss",
+      "prompt": "Allow location access to use My Location.",
+      "requesting": "Requesting...",
+      "notSupported": "Location is not supported in this browser.",
+      "failed": "Location access failed. You can try again from your browser settings.",
+      "denied": "Location permission was denied. Enable it in browser settings, then reload.",
+      "unavailable": "Your location is unavailable right now. Try again in a moment.",
+      "timeout": "Location request timed out. Try again."
+    },
+    "layers": {
+      "title": "Map Layers",
+      "baseMap": "Base map",
+      "tunnelsOverlay": "Tunnels Overlay",
+      "styleMinimal": "Minimal",
+      "styleDetailed": "Detailed",
+      "on": "On",
+      "off": "Off"
+    },
+    "poi": {
+      "cancel": "Cancel",
+      "complete": "Complete",
+      "completed": "Completed"
+    },
+    "info": {
+      "close": "Close",
+      "tabs": {
+        "credits": "Credits",
+        "coffee": "Donate",
+        "feature": "Contact"
+      }
+    }
+  },
+  "poi": {
+    "info": "Info",
+    "museum-tg": "Museum in Tarnowskie Gory",
+    "kopalnia-srebra": "Historic Silver Mine",
+    "gwarek-1": "Miner statue 1",
+    "gwarek-2": "Miner statue 2",
+    "gwarek-3": "Miner statue 3",
+    "gwarek-4": "Miner statue 4",
+    "gwarek-5": "Miner statue 5",
+    "gwarek-6": "Miner statue 6",
+    "gwarek-7": "Miner statue 7",
+    "gwarek-8": "Miner statue 8",
+    "gwarek-9": "Miner statue 9",
+    "gwarek-10": "Miner statue 10",
+    "gwarek-11": "Miner statue 11",
+    "gwarek-12": "Miner statue 12",
+    "photo-1": "Photo 1",
+    "photo-2": "Photo 2"
+  },
+  "embeds": {
+    "photo": {
+      "tip": "Try to align your position to this image and check how the city has changed.",
+      "title": "Photo title",
+      "info": "Image details will be added here.",
+      "alt": "Historical photo"
+    },
+    "gwarek": {
+      "title": "Miner Statue",
+      "subtitle": "Talk to the old miner. Choose options to follow the story.",
+      "imageHint": "Image area",
+      "loading": "Loading dialogue...",
+      "restart": "Restart",
+      "nodePrefix": "Node",
+      "nodeNotFound": "Dialogue node not found. Restarting.",
+      "loadError": "Could not load dialogue JSON. Make sure the dialogue file exists and is served by your web server.",
+      "retry": "Retry",
+      "restartConversation": "Restart conversation",
+      "continue": "Continue"
+    },
+    "credits": {
+      "title": "Credits",
+      "intro": "Placeholder credits list. Replace each paragraph with final attribution details.",
+      "asset1": "Asset 01: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut massa eget velit suscipit semper vitae ac enim.",
+      "asset2": "Asset 02: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis tortor sed mi dictum, non efficitur lectus malesuada.",
+      "asset3": "Asset 03: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum lacus at purus auctor, ut molestie purus vulputate.",
+      "asset4": "Asset 04: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel est et metus volutpat commodo at eget felis.",
+      "asset5": "Asset 05: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum risus ac ligula ultrices, nec consequat justo pharetra."
+    },
+    "coffee": {
+      "title": "Donate",
+      "body": "If you enjoy this map experience and want to support future updates, you can contribute through one of the donation options below.",
+      "hint": "These buttons are placeholders for now and are not connected yet.",
+      "donate2": "Donate $2",
+      "donate5": "Donate $5",
+      "donate10": "Donate $10",
+      "custom": "Custom amount"
+    },
+    "feature": {
+      "title": "Contact",
+      "intro": "Share an improvement idea for this experience. This is a placeholder form and does not submit yet.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "requestLabel": "Feature request",
+      "requestPlaceholder": "What should be improved and why?",
+      "priorityLabel": "Priority",
+      "priorityPlaceholder": "Low / Medium / High",
+      "budgetLabel": "Estimated budget (optional)",
+      "budgetPlaceholder": "e.g. 100-300 PLN",
+      "tip": "Tip: include screenshots, expected behavior, and where in the app this feature belongs.",
+      "send": "Send request",
+      "clear": "Clear"
+    }
+  }
+}

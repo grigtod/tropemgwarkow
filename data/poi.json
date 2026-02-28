@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": "info",
+      "lat": 50.44417,
+      "lon": 18.85564,
+      "label": "info",
+      "emoji": "ℹ️",
+      "embedUrl": "https://en.wikipedia.org/wiki/Tarnowskie_G%C3%B3ry"
+    },
+    {
+      "id": "museum-tg",
+      "lat": 50.44426,
+      "lon": 18.85490,
+      "label": "Muzeum w TG",
+      "emoji": "🏛️",
+      "embedUrl": "https://en.wikipedia.org/wiki/Tarnowskie_G%C3%B3ry"
+    },
+    {
+      "id": "kopalnia-srebra",
+      "lat": 50.42554,
+      "lon": 18.84941,
+      "label": "Zabytkowa Kopalnia Srebra",
+      "emoji": "⛏️",
+      "embedUrl": "https://en.wikipedia.org/wiki/Tarnowskie_G%C3%B3ry"
+    }
+  ]
+}
