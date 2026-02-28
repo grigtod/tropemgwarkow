@@ -23,7 +23,7 @@ export async function loadAllPois() {
       el.lat,
       el.lon,
       el.label,
-      "🗿",
+      "miner",
       "./embeds/pomnik-gwarka.html",
       `poi.${el.id}`
     )

@@ -335,6 +335,12 @@ body {
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
 }
 
+.poi-image {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+}
+
 .poi-dot {
   width: 10px;
   height: 10px;

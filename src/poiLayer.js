@@ -13,7 +13,7 @@ export function createPoiLayer({
   function getDotColor(emoji) {
     const colorsByEmoji = {
       "📷": "#d9480f",
-      "🗿": "#495057",
+      miner: "#495057",
       "ℹ️": "#1971c2",
       "🏛️": "#5f3dc4",
       "⛏️": "#2b8a3e"
@@ -48,7 +48,9 @@ export function createPoiLayer({
 
     const markerVisual = showDotOnly
       ? `<span class="poi-dot" style="--poi-dot-color: ${getDotColor(poi.emoji)}" aria-hidden="true"></span>`
-      : `<span class="poi-emoji">${poi.emoji}</span>`;
+      : poi.emoji === "miner"
+        ? `<img class="poi-image" src="./embeds/assets/miner-marker.svg" alt="" aria-hidden="true" />`
+        : `<span class="poi-emoji">${poi.emoji}</span>`;
 
     const html = `
       <div class="${classNameParts.join(" ")}" role="button" aria-label="${safeLabel}">
