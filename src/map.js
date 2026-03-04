@@ -36,6 +36,132 @@ export function createMap({ mapElId = "map", ui, i18n } = {}) {
   map.options.doubleClickZoom = false;
   map.options.tapTolerance = 15;
 
+  function enableSingleFingerTapHoldZoom() {
+    if (!window.matchMedia("(pointer: coarse)").matches) return;
+
+    const container = map.getContainer();
+    const maxTapDelayMs = 350;
+    const maxTapTravelPx = 10;
+    const maxTapDistancePx = 40;
+    const zoomPixelsPerLevel = 120;
+
+    let touchStartTime = 0;
+    let touchStartPoint = null;
+    let touchMoved = false;
+    let lastTapTime = 0;
+    let lastTapPoint = null;
+    let gestureActive = false;
+    let gestureTouchId = null;
+    let gestureStartY = 0;
+    let gestureStartZoom = 0;
+    let gestureAnchor = null;
+    let draggingWasEnabled = true;
+
+    function distance(a, b) {
+      if (!a || !b) return Infinity;
+      return Math.hypot(a.x - b.x, a.y - b.y);
+    }
+
+    function findTouchById(touchList, touchId) {
+      for (let i = 0; i < touchList.length; i += 1) {
+        if (touchList[i].identifier === touchId) return touchList[i];
+      }
+      return null;
+    }
+
+    function stopGesture() {
+      if (!gestureActive) return;
+      gestureActive = false;
+      gestureTouchId = null;
+      if (draggingWasEnabled) map.dragging.enable();
+    }
+
+    container.addEventListener(
+      "touchstart",
+      (event) => {
+        if (event.touches.length !== 1) {
+          stopGesture();
+          return;
+        }
+
+        const touch = event.touches[0];
+        const currentPoint = { x: touch.clientX, y: touch.clientY };
+        const now = Date.now();
+
+        touchStartTime = now;
+        touchStartPoint = currentPoint;
+        touchMoved = false;
+
+        if (now - lastTapTime <= maxTapDelayMs && distance(currentPoint, lastTapPoint) <= maxTapDistancePx) {
+          gestureActive = true;
+          gestureTouchId = touch.identifier;
+          gestureStartY = touch.clientY;
+          gestureStartZoom = map.getZoom();
+          gestureAnchor = map.mouseEventToLatLng(touch);
+          draggingWasEnabled = map.dragging.enabled();
+          if (draggingWasEnabled) map.dragging.disable();
+          event.preventDefault();
+        }
+      },
+      { passive: false }
+    );
+
+    container.addEventListener(
+      "touchmove",
+      (event) => {
+        if (!touchStartPoint || event.touches.length !== 1) return;
+
+        const currentTouch = gestureActive
+          ? findTouchById(event.touches, gestureTouchId)
+          : event.touches[0];
+
+        if (!currentTouch) return;
+
+        const currentPoint = { x: currentTouch.clientX, y: currentTouch.clientY };
+        if (distance(currentPoint, touchStartPoint) > maxTapTravelPx) {
+          touchMoved = true;
+        }
+
+        if (!gestureActive) return;
+
+        const zoomDelta = (gestureStartY - currentTouch.clientY) / zoomPixelsPerLevel;
+        const nextZoom = Math.max(config.minZoom, Math.min(config.maxZoom, gestureStartZoom + zoomDelta));
+        map.setZoomAround(gestureAnchor, nextZoom, { animate: false });
+        event.preventDefault();
+      },
+      { passive: false }
+    );
+
+    container.addEventListener(
+      "touchend",
+      (event) => {
+        const now = Date.now();
+        const touchDuration = now - touchStartTime;
+
+        if (gestureActive && findTouchById(event.changedTouches, gestureTouchId)) {
+          stopGesture();
+          lastTapTime = 0;
+          lastTapPoint = null;
+          return;
+        }
+
+        if (!gestureActive && !touchMoved && touchDuration <= maxTapDelayMs && touchStartPoint) {
+          lastTapTime = now;
+          lastTapPoint = touchStartPoint;
+          return;
+        }
+
+        lastTapTime = 0;
+        lastTapPoint = null;
+      },
+      { passive: true }
+    );
+
+    container.addEventListener("touchcancel", stopGesture, { passive: true });
+  }
+
+  enableSingleFingerTapHoldZoom();
+
   function disableMapInteractions() {
     map.dragging.disable();
     map.scrollWheelZoom.disable();
