@@ -49,7 +49,7 @@ export function createPoiLayer({
     const markerVisual = showDotOnly
       ? `<span class="poi-dot" style="--poi-dot-color: ${getDotColor(poi.emoji)}" aria-hidden="true"></span>`
       : poi.emoji === "miner"
-        ? `<img class="poi-image" src="./embeds/assets/miner-marker.svg" alt="" aria-hidden="true" />`
+        ? `<img class="poi-image" src="./embeds/assets/miner-marker.png" alt="" aria-hidden="true" onerror="this.onerror=null;this.src='./embeds/assets/miner-marker.svg';" />`
         : `<span class="poi-emoji">${poi.emoji}</span>`;
 
     const html = `
