@@ -9,6 +9,76 @@ body {
   width: 100%;
 }
 
+.landing-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.landing-hidden {
+  display: none;
+}
+
+.landing-card {
+  position: relative;
+  width: min(560px, 100%);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+  padding: 22px 18px 18px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.landing-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.landing-title {
+  margin: 0 34px 10px 0;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.landing-lead {
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.82);
+}
+
+.landing-hint {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.66);
+}
+
+.landing-start-btn {
+  min-height: 42px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* Top banner */
 .banner {
   position: fixed;
@@ -594,6 +664,23 @@ body {
     height: 52px;
     border-radius: 14px;
     font-size: 22px;
+  }
+
+  .landing-overlay {
+    padding: 14px;
+  }
+
+  .landing-card {
+    border-radius: 16px;
+    padding: 18px 14px 14px;
+  }
+
+  .landing-title {
+    font-size: 24px;
+  }
+
+  .landing-lead {
+    font-size: 15px;
   }
 
   .language-menu {

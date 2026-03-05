@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <div id="landingOverlay" class="landing-overlay landing-hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="landingTitle">
+      <div class="landing-card">
+        <button id="landingCloseBtn" class="landing-close-btn" type="button" aria-label="Close intro">✕</button>
+        <h1 id="landingTitle" class="landing-title">Discover Tarnowskie Gory</h1>
+        <p id="landingLead" class="landing-lead">
+          Explore points of interest, historic routes, and map layers in an interactive city guide.
+        </p>
+        <p id="landingHint" class="landing-hint">You can reopen information anytime using the i button.</p>
+        <button id="landingStartBtn" class="landing-start-btn" type="button">Start exploring</button>
+      </div>
+    </div>
+
     <!-- Location banner (hidden unless needed) -->
     <div id="locationBanner" class="banner banner-hidden" role="dialog" aria-live="polite" aria-label="Location permission">
       <span id="bannerText">
