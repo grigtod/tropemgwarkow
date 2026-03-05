@@ -2,182 +2,627 @@
   "start": {
     "text": "Greetings, traveler. You've found me, a miner from the days when Tarnowskie Góry's veins ran rich with silver and lead. Do you seek tales from beneath the earth?",
     "options": [
-      { "text": "Yes, tell me about your work.", "next": "work" },
-      { "text": "What was life like in your time?", "next": "life" },
-      { "text": "How did mining shape this town?", "next": "town" }
-    ]
+      {
+        "text": "Yes, tell me about your work.",
+        "next": "work"
+      },
+      {
+        "text": "What was life like in your time?",
+        "next": "life"
+      },
+      {
+        "text": "How did mining shape this town?",
+        "next": "town"
+      }
+    ],
+    "uuid": "42a3efd5-16f4-42b8-af35-30230e5695c0",
+    "audio_file": "start_42a3efd5-16f4-42b8-af35-30230e5695c0.mp3"
   },
-
   "work": {
     "text": "Our days were long and the depths unforgiving. We extracted galena, the ore of lead and silver. The shafts were damp, and water was our constant adversary. In 1788, a steam engine from England arrived and helped drain the water.",
     "options": [
-      { "text": "Tell me more about the steam engine.", "next": "steam_engine" },
-      { "text": "What dangers did you face?", "next": "dangers" },
-      { "text": "How did this affect the town?", "next": "town" }
-    ]
+      {
+        "text": "Tell me more about the steam engine.",
+        "next": "steam_engine"
+      },
+      {
+        "text": "What dangers did you face?",
+        "next": "dangers"
+      },
+      {
+        "text": "How did this affect the town?",
+        "next": "town"
+      }
+    ],
+    "uuid": "e1e25d41-4261-4695-8200-61d11b7024b4",
+    "audio_file": "work_e1e25d41-4261-4695-8200-61d11b7024b4.mp3"
   },
-
   "life": {
     "text": "Life above ground was modest. Families were tightly connected to the rhythm of the mine. The Ordunek Górny granted miners rights and attracted workers from across Europe.",
     "options": [
-      { "text": "What was the Ordunek Górny?", "next": "ordunek" },
-      { "text": "Did many come from afar?", "next": "immigrants" },
-      { "text": "How did families cope?", "next": "families" }
-    ]
+      {
+        "text": "What was the Ordunek Górny?",
+        "next": "ordunek"
+      },
+      {
+        "text": "Did many come from afar?",
+        "next": "immigrants"
+      },
+      {
+        "text": "How did families cope?",
+        "next": "families"
+      }
+    ],
+    "uuid": "7630ad0a-956b-4ad6-9e5a-87fc0b4e4b92",
+    "audio_file": "life_7630ad0a-956b-4ad6-9e5a-87fc0b4e4b92.mp3"
   },
-
   "town": {
     "text": "The mine was the heart of Tarnowskie Góry. Its wealth drew scholars, merchants, and nobles. The town prospered when the mines thrived.",
     "options": [
-      { "text": "Who visited the town?", "next": "visitors" },
-      { "text": "What innovations emerged?", "next": "innovations" },
-      { "text": "Did the town face hardships?", "next": "hardships" }
-    ]
+      {
+        "text": "Who visited the town?",
+        "next": "visitors"
+      },
+      {
+        "text": "What innovations emerged?",
+        "next": "innovations"
+      },
+      {
+        "text": "Did the town face hardships?",
+        "next": "hardships"
+      }
+    ],
+    "uuid": "3b86e4c7-2f72-4fbb-91bc-57f0f94da77c",
+    "audio_file": "town_3b86e4c7-2f72-4fbb-91bc-57f0f94da77c.mp3"
   },
-
   "steam_engine": {
     "text": "Before the engine, horses powered drainage. The steam engine allowed deeper mining and reduced flooding risks.",
     "options": [
-      { "text": "How did it change daily work?", "next": "daily_tasks" },
-      { "text": "Were there technical challenges?", "next": "challenges" },
-      { "text": "What happened to it later?", "next": "engine_fate" }
-    ]
+      {
+        "text": "How did it change daily work?",
+        "next": "daily_tasks"
+      },
+      {
+        "text": "Were there technical challenges?",
+        "next": "challenges"
+      },
+      {
+        "text": "What happened to it later?",
+        "next": "engine_fate"
+      }
+    ],
+    "uuid": "26b7b3cf-d927-45ca-875e-1e2e0e734527",
+    "audio_file": "steam_engine_26b7b3cf-d927-45ca-875e-1e2e0e734527.mp3"
   },
-
   "dangers": {
     "text": "Cave ins, gas, and flooding were constant threats. Many miners never returned home.",
     "options": [
-      { "text": "Were there safety measures?", "next": "safety" },
-      { "text": "Did families get support?", "next": "support" },
-      { "text": "How did you cope mentally?", "next": "cope" }
-    ]
+      {
+        "text": "Were there safety measures?",
+        "next": "safety"
+      },
+      {
+        "text": "Did families get support?",
+        "next": "support"
+      },
+      {
+        "text": "How did you cope mentally?",
+        "next": "cope"
+      }
+    ],
+    "uuid": "281e3496-e0d0-414d-95da-8acdd288b208",
+    "audio_file": "dangers_281e3496-e0d0-414d-95da-8acdd288b208.mp3"
   },
-
   "ordunek": {
     "text": "The Ordunek Górny of 1528 established mining law and protected worker rights.",
     "options": [
-      { "text": "What rights were included?", "next": "rights" },
-      { "text": "Did it help town growth?", "next": "growth" },
-      { "text": "Is it remembered today?", "next": "recognition" }
-    ]
+      {
+        "text": "What rights were included?",
+        "next": "rights"
+      },
+      {
+        "text": "Did it help town growth?",
+        "next": "growth"
+      },
+      {
+        "text": "Is it remembered today?",
+        "next": "recognition"
+      }
+    ],
+    "uuid": "326d7fdb-8b2a-44d1-9c5a-a63b416b3478",
+    "audio_file": "ordunek_326d7fdb-8b2a-44d1-9c5a-a63b416b3478.mp3"
   },
-
   "immigrants": {
     "text": "Miners arrived from Franconia, Bohemia, and beyond, bringing skills and traditions.",
     "options": [
-      { "text": "Did this cause conflict?", "next": "conflicts" },
-      { "text": "How did cultures blend?", "next": "blend" },
-      { "text": "Are traces visible today?", "next": "influences" }
-    ]
+      {
+        "text": "Did this cause conflict?",
+        "next": "conflicts"
+      },
+      {
+        "text": "How did cultures blend?",
+        "next": "blend"
+      },
+      {
+        "text": "Are traces visible today?",
+        "next": "influences"
+      }
+    ],
+    "uuid": "bb28fa88-c331-4e8c-9b44-f7ccc1873aff",
+    "audio_file": "immigrants_bb28fa88-c331-4e8c-9b44-f7ccc1873aff.mp3"
   },
-
   "families": {
     "text": "Families supported each other through hardship. Children often followed mining traditions.",
     "options": [
-      { "text": "Was there education?", "next": "education" },
-      { "text": "Did families earn income elsewhere?", "next": "income" },
-      { "text": "Did traditions matter?", "next": "traditions" }
-    ]
+      {
+        "text": "Was there education?",
+        "next": "education"
+      },
+      {
+        "text": "Did families earn income elsewhere?",
+        "next": "income"
+      },
+      {
+        "text": "Did traditions matter?",
+        "next": "traditions"
+      }
+    ],
+    "uuid": "75c5bc3b-b074-4740-bec6-32f3d42ca38e",
+    "audio_file": "families_75c5bc3b-b074-4740-bec6-32f3d42ca38e.mp3"
   },
-
   "visitors": {
     "text": "Scholars and famous thinkers visited to study mining methods.",
     "options": [
-      { "text": "What did they learn?", "next": "goethe" },
-      { "text": "Did visits improve mining?", "next": "influence" },
-      { "text": "Did visits change the town?", "next": "impacts" }
-    ]
+      {
+        "text": "What did they learn?",
+        "next": "goethe"
+      },
+      {
+        "text": "Did visits improve mining?",
+        "next": "influence"
+      },
+      {
+        "text": "Did visits change the town?",
+        "next": "impacts"
+      }
+    ],
+    "uuid": "9823ea64-4c19-4137-8ee0-92f71daa034c",
+    "audio_file": "visitors_9823ea64-4c19-4137-8ee0-92f71daa034c.mp3"
   },
-
   "innovations": {
     "text": "Drainage tunnels and engineering solutions helped mines operate longer and safer.",
     "options": [
-      { "text": "How were tunnels built?", "next": "construction" },
-      { "text": "Are they still used?", "next": "functional" },
-      { "text": "Did other regions copy this?", "next": "adoption" }
-    ]
+      {
+        "text": "How were tunnels built?",
+        "next": "construction"
+      },
+      {
+        "text": "Are they still used?",
+        "next": "functional"
+      },
+      {
+        "text": "Did other regions copy this?",
+        "next": "adoption"
+      }
+    ],
+    "uuid": "967eedf2-2db6-4cc4-8fde-b304e4dac525",
+    "audio_file": "innovations_967eedf2-2db6-4cc4-8fde-b304e4dac525.mp3"
   },
-
   "hardships": {
     "text": "War, disease, and fires tested the town repeatedly.",
     "options": [
-      { "text": "How did people rebuild?", "next": "recover" },
-      { "text": "Was there organized help?", "next": "systems" },
-      { "text": "Did mining change afterward?", "next": "change" }
-    ]
+      {
+        "text": "How did people rebuild?",
+        "next": "recover"
+      },
+      {
+        "text": "Was there organized help?",
+        "next": "systems"
+      },
+      {
+        "text": "Did mining change afterward?",
+        "next": "change"
+      }
+    ],
+    "uuid": "6e1178be-c940-455b-af9a-245a8b9290f4",
+    "audio_file": "hardships_6e1178be-c940-455b-af9a-245a8b9290f4.mp3"
   },
-
   "daily_tasks": {
     "text": "Less time draining water meant more time mining ore efficiently.",
     "options": [
-      { "text": "Did output increase?", "next": "production" },
-      { "text": "Were there downsides?", "next": "downsides" },
-      { "text": "How did miners adapt?", "next": "adapt" }
-    ]
+      {
+        "text": "Did output increase?",
+        "next": "production"
+      },
+      {
+        "text": "Were there downsides?",
+        "next": "downsides"
+      },
+      {
+        "text": "How did miners adapt?",
+        "next": "adapt"
+      }
+    ],
+    "uuid": "a8b64084-e2c4-41f9-ad86-f42c43227036",
+    "audio_file": "daily_tasks_a8b64084-e2c4-41f9-ad86-f42c43227036.mp3"
   },
-
   "challenges": {
     "text": "Engines required fuel, maintenance, and trained operators.",
     "options": [
-      { "text": "Where did coal come from?", "next": "coal" },
-      { "text": "Were there accidents?", "next": "accidents" },
-      { "text": "Did this inspire new machines?", "next": "inspiration" }
-    ]
+      {
+        "text": "Where did coal come from?",
+        "next": "coal"
+      },
+      {
+        "text": "Were there accidents?",
+        "next": "accidents"
+      },
+      {
+        "text": "Did this inspire new machines?",
+        "next": "inspiration"
+      }
+    ],
+    "uuid": "ed7bb123-11c4-4f62-b13f-f5c167ba1dff",
+    "audio_file": "challenges_ed7bb123-11c4-4f62-b13f-f5c167ba1dff.mp3"
   },
-
   "engine_fate": {
     "text": "Eventually mining slowed, and the engine was retired.",
     "options": [
-      { "text": "Is it commemorated?", "next": "commemorated" },
-      { "text": "Did it influence industry?", "next": "industries" },
-      { "text": "Do models exist?", "next": "replicas" }
-    ]
+      {
+        "text": "Is it commemorated?",
+        "next": "commemorated"
+      },
+      {
+        "text": "Did it influence industry?",
+        "next": "industries"
+      },
+      {
+        "text": "Do models exist?",
+        "next": "replicas"
+      }
+    ],
+    "uuid": "b533c43a-25a2-4763-85d7-5cfa33cbcfdd",
+    "audio_file": "engine_fate_b533c43a-25a2-4763-85d7-5cfa33cbcfdd.mp3"
   },
-
-  "safety": { "text": "Simple supports and ventilation were used, but risk remained.", "options": [{ "text": "Continue", "next": "end" }] },
-  "support": { "text": "Mining guilds and neighbors supported families of injured miners.", "options": [{ "text": "Continue", "next": "end" }] },
-  "cope": { "text": "Faith, brotherhood, and routine helped miners endure fear.", "options": [{ "text": "Continue", "next": "end" }] },
-
-  "rights": { "text": "Rights included wages protection and legal structure for disputes.", "options": [{ "text": "Continue", "next": "end" }] },
-  "growth": { "text": "It attracted skilled labor and investment.", "options": [{ "text": "Continue", "next": "end" }] },
-  "recognition": { "text": "It is remembered as a milestone in mining law.", "options": [{ "text": "Continue", "next": "end" }] },
-
-  "conflicts": { "text": "Occasional disputes occurred, but shared work united miners.", "options": [{ "text": "Continue", "next": "end" }] },
-  "blend": { "text": "Languages, recipes, and traditions merged over generations.", "options": [{ "text": "Continue", "next": "end" }] },
-  "influences": { "text": "Architecture and surnames still reflect this diversity.", "options": [{ "text": "Continue", "next": "end" }] },
-
-  "education": { "text": "Later, technical mining education appeared in the region.", "options": [{ "text": "Continue", "next": "end" }] },
-  "income": { "text": "Some families farmed or crafted tools.", "options": [{ "text": "Continue", "next": "end" }] },
-  "traditions": { "text": "Mining festivals reinforced identity and unity.", "options": [{ "text": "Continue", "next": "end" }] },
-
-  "goethe": { "text": "Visitors studied geology and industrial engineering methods.", "options": [{ "text": "Continue", "next": "end" }] },
-  "influence": { "text": "Knowledge exchange improved mining efficiency.", "options": [{ "text": "Continue", "next": "end" }] },
-  "impacts": { "text": "The town gained prestige and investment.", "options": [{ "text": "Continue", "next": "end" }] },
-
-  "construction": { "text": "Tunnels were hand carved with careful surveying.", "options": [{ "text": "Continue", "next": "end" }] },
-  "functional": { "text": "Some tunnels survive as historical heritage sites.", "options": [{ "text": "Continue", "next": "end" }] },
-  "adoption": { "text": "Other mining towns studied these drainage solutions.", "options": [{ "text": "Continue", "next": "end" }] },
-
-  "recover": { "text": "Community labor rebuilt homes and infrastructure.", "options": [{ "text": "Continue", "next": "end" }] },
-  "systems": { "text": "Guilds and churches organized relief efforts.", "options": [{ "text": "Continue", "next": "end" }] },
-  "change": { "text": "Mining planning improved after disasters.", "options": [{ "text": "Continue", "next": "end" }] },
-
-  "production": { "text": "Yes, deeper mining expanded silver output.", "options": [{ "text": "Continue", "next": "end" }] },
-  "downsides": { "text": "Dependence on fuel and machinery increased costs.", "options": [{ "text": "Continue", "next": "end" }] },
-  "adapt": { "text": "New technical roles emerged among miners.", "options": [{ "text": "Continue", "next": "end" }] },
-
-  "coal": { "text": "Coal was transported from regional mines.", "options": [{ "text": "Continue", "next": "end" }] },
-  "accidents": { "text": "Mechanical failures were rare but dangerous.", "options": [{ "text": "Continue", "next": "end" }] },
-  "inspiration": { "text": "Steam power spread to other industries.", "options": [{ "text": "Continue", "next": "end" }] },
-
-  "commemorated": { "text": "Historical exhibits remember early mining technology.", "options": [{ "text": "Continue", "next": "end" }] },
-  "industries": { "text": "Steam technology accelerated industrial growth.", "options": [{ "text": "Continue", "next": "end" }] },
-  "replicas": { "text": "Some museums display scale models.", "options": [{ "text": "Continue", "next": "end" }] },
-
+  "safety": {
+    "text": "Simple supports and ventilation were used, but risk remained.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "77a164dd-51c0-4b28-85eb-9c2d67c7685c",
+    "audio_file": "safety_77a164dd-51c0-4b28-85eb-9c2d67c7685c.mp3"
+  },
+  "support": {
+    "text": "Mining guilds and neighbors supported families of injured miners.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "6e49624b-3dc0-4604-980a-4e81b6574b70",
+    "audio_file": "support_6e49624b-3dc0-4604-980a-4e81b6574b70.mp3"
+  },
+  "cope": {
+    "text": "Faith, brotherhood, and routine helped miners endure fear.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "147f5e82-bc7f-4b3f-95f3-49c31881eede",
+    "audio_file": "cope_147f5e82-bc7f-4b3f-95f3-49c31881eede.mp3"
+  },
+  "rights": {
+    "text": "Rights included wages protection and legal structure for disputes.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "0c8acc72-b7a2-4f96-9572-c6a6dfe4131b",
+    "audio_file": "rights_0c8acc72-b7a2-4f96-9572-c6a6dfe4131b.mp3"
+  },
+  "growth": {
+    "text": "It attracted skilled labor and investment.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "be8c4c63-1048-4a5b-84e3-fedfe7e250c8",
+    "audio_file": "growth_be8c4c63-1048-4a5b-84e3-fedfe7e250c8.mp3"
+  },
+  "recognition": {
+    "text": "It is remembered as a milestone in mining law.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "a1e1eb65-5550-4452-8e74-64d5a37a9f1d",
+    "audio_file": "recognition_a1e1eb65-5550-4452-8e74-64d5a37a9f1d.mp3"
+  },
+  "conflicts": {
+    "text": "Occasional disputes occurred, but shared work united miners.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "b7a8b9f8-c062-4dbb-9144-ddec7faaf658",
+    "audio_file": "conflicts_b7a8b9f8-c062-4dbb-9144-ddec7faaf658.mp3"
+  },
+  "blend": {
+    "text": "Languages, recipes, and traditions merged over generations.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "b1567307-86c6-40ad-9c9d-ffda848fcc3f",
+    "audio_file": "blend_b1567307-86c6-40ad-9c9d-ffda848fcc3f.mp3"
+  },
+  "influences": {
+    "text": "Architecture and surnames still reflect this diversity.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "faed9e18-fad8-4dc0-935e-f107dba90fb5",
+    "audio_file": "influences_faed9e18-fad8-4dc0-935e-f107dba90fb5.mp3"
+  },
+  "education": {
+    "text": "Later, technical mining education appeared in the region.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "4524bf66-00c2-4824-aebd-3b2841699519",
+    "audio_file": "education_4524bf66-00c2-4824-aebd-3b2841699519.mp3"
+  },
+  "income": {
+    "text": "Some families farmed or crafted tools.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "069b85da-c36b-46ba-a687-f1287c5c0e8a",
+    "audio_file": "income_069b85da-c36b-46ba-a687-f1287c5c0e8a.mp3"
+  },
+  "traditions": {
+    "text": "Mining festivals reinforced identity and unity.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "2abf3059-c278-4594-a468-82dc6b191e78",
+    "audio_file": "traditions_2abf3059-c278-4594-a468-82dc6b191e78.mp3"
+  },
+  "goethe": {
+    "text": "Visitors studied geology and industrial engineering methods.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "dc27d607-c9f3-432b-b643-917b892f1e68",
+    "audio_file": "goethe_dc27d607-c9f3-432b-b643-917b892f1e68.mp3"
+  },
+  "influence": {
+    "text": "Knowledge exchange improved mining efficiency.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "d377b89f-879f-40d2-a305-0a646ebabff5",
+    "audio_file": "influence_d377b89f-879f-40d2-a305-0a646ebabff5.mp3"
+  },
+  "impacts": {
+    "text": "The town gained prestige and investment.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "7c48c48a-e2b2-498f-a501-7efa34730ae5",
+    "audio_file": "impacts_7c48c48a-e2b2-498f-a501-7efa34730ae5.mp3"
+  },
+  "construction": {
+    "text": "Tunnels were hand carved with careful surveying.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "6056a7a8-6b14-456c-8879-04ef04d0b569",
+    "audio_file": "construction_6056a7a8-6b14-456c-8879-04ef04d0b569.mp3"
+  },
+  "functional": {
+    "text": "Some tunnels survive as historical heritage sites.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "a264a0f7-925c-40d9-90f0-bb3594ec87b2",
+    "audio_file": "functional_a264a0f7-925c-40d9-90f0-bb3594ec87b2.mp3"
+  },
+  "adoption": {
+    "text": "Other mining towns studied these drainage solutions.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "ffe2acb6-9711-4dba-872e-5ad7f6abebd3",
+    "audio_file": "adoption_ffe2acb6-9711-4dba-872e-5ad7f6abebd3.mp3"
+  },
+  "recover": {
+    "text": "Community labor rebuilt homes and infrastructure.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "ae2b3c46-8f34-411a-af16-f16b2f1975fc",
+    "audio_file": "recover_ae2b3c46-8f34-411a-af16-f16b2f1975fc.mp3"
+  },
+  "systems": {
+    "text": "Guilds and churches organized relief efforts.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "6f1f35cf-43fd-4d7f-8568-41d3ace55448",
+    "audio_file": "systems_6f1f35cf-43fd-4d7f-8568-41d3ace55448.mp3"
+  },
+  "change": {
+    "text": "Mining planning improved after disasters.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "c2dac2f4-3b64-4c2b-a407-45ba110981fc",
+    "audio_file": "change_c2dac2f4-3b64-4c2b-a407-45ba110981fc.mp3"
+  },
+  "production": {
+    "text": "Yes, deeper mining expanded silver output.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "475d6d8a-f7a4-4fa1-9097-59b55b96828d",
+    "audio_file": "production_475d6d8a-f7a4-4fa1-9097-59b55b96828d.mp3"
+  },
+  "downsides": {
+    "text": "Dependence on fuel and machinery increased costs.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "40568096-9ede-49a0-b546-0cc1d5211a39",
+    "audio_file": "downsides_40568096-9ede-49a0-b546-0cc1d5211a39.mp3"
+  },
+  "adapt": {
+    "text": "New technical roles emerged among miners.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "f58e97e2-39aa-484d-8b3a-8e440558079a",
+    "audio_file": "adapt_f58e97e2-39aa-484d-8b3a-8e440558079a.mp3"
+  },
+  "coal": {
+    "text": "Coal was transported from regional mines.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "97253579-416c-4077-ab02-b33541f6e842",
+    "audio_file": "coal_97253579-416c-4077-ab02-b33541f6e842.mp3"
+  },
+  "accidents": {
+    "text": "Mechanical failures were rare but dangerous.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "7c4a76f1-9de5-450f-806f-8247ae12ac86",
+    "audio_file": "accidents_7c4a76f1-9de5-450f-806f-8247ae12ac86.mp3"
+  },
+  "inspiration": {
+    "text": "Steam power spread to other industries.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "3c7ba424-76e2-44df-9b37-7c278b4be2fd",
+    "audio_file": "inspiration_3c7ba424-76e2-44df-9b37-7c278b4be2fd.mp3"
+  },
+  "commemorated": {
+    "text": "Historical exhibits remember early mining technology.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "d64c4e66-7db2-41ed-933c-bdbb93f149af",
+    "audio_file": "commemorated_d64c4e66-7db2-41ed-933c-bdbb93f149af.mp3"
+  },
+  "industries": {
+    "text": "Steam technology accelerated industrial growth.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "bcfedf10-b852-4150-8c89-1abaaa034d19",
+    "audio_file": "industries_bcfedf10-b852-4150-8c89-1abaaa034d19.mp3"
+  },
+  "replicas": {
+    "text": "Some museums display scale models.",
+    "options": [
+      {
+        "text": "Continue",
+        "next": "end"
+      }
+    ],
+    "uuid": "bbbab13a-1bad-4d6c-8f7c-5a52f5281b2a",
+    "audio_file": "replicas_bbbab13a-1bad-4d6c-8f7c-5a52f5281b2a.mp3"
+  },
   "end": {
     "text": "Thank you for listening to my tales. May the spirit of Tarnowskie Góry's miners live on in your heart.",
     "options": [
-      { "text": "Restart conversation", "next": "start" }
-    ]
+      {
+        "text": "Restart conversation",
+        "next": "start"
+      }
+    ],
+    "uuid": "e450853c-a5cf-443a-851e-32cc369315b8",
+    "audio_file": "end_e450853c-a5cf-443a-851e-32cc369315b8.mp3"
   }
 }

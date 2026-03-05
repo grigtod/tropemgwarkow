@@ -109,9 +109,11 @@
       });
 
       const DIALOGUE_URL = "dialoguetrees/test.json";
+      const DIALOGUE_AUDIO_DIR = "dialoguetrees/audio";
 
       let dialogue = null;
       let currentNodeId = "start";
+      let currentAudio = null;
 
       const minerTextEl = document.getElementById("minerText");
       const optionsEl = document.getElementById("options");
@@ -143,6 +145,48 @@
         return dialogue[id] || null;
       }
 
+      function stopCurrentAudio() {
+        if (!currentAudio) return;
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+      }
+
+      function resolveAudioFile(nodeId, node) {
+        if (!node || typeof node !== "object") return null;
+
+        if (typeof node.audio_file === "string" && node.audio_file.trim()) {
+          return node.audio_file.trim();
+        }
+
+        const keyPrefix = `${nodeId}_`;
+        for (const [key, value] of Object.entries(dialogue || {})) {
+          if (key !== nodeId || !value || typeof value.audio_file !== "string") continue;
+          const filename = value.audio_file.trim();
+          if (filename.startsWith(keyPrefix) || filename === `${nodeId}.mp3`) {
+            return filename;
+          }
+        }
+
+        return null;
+      }
+
+      function playNodeAudio(nodeId, node) {
+        stopCurrentAudio();
+
+        const audioFile = resolveAudioFile(nodeId, node);
+        if (!audioFile) return;
+
+        currentAudio = new Audio(`${DIALOGUE_AUDIO_DIR}/${audioFile}`);
+        currentAudio.addEventListener("ended", () => {
+          currentAudio = null;
+        }, { once: true });
+        currentAudio.play().catch((err) => {
+          // Browser may block autoplay until user interaction.
+          console.debug("Audio playback blocked or failed.", err);
+        });
+      }
+
       function setNode(id) {
         const node = safeGetNode(id);
         currentNodeId = node ? id : dialogue && dialogue.end ? "end" : "start";
@@ -165,6 +209,7 @@
         const node = safeGetNode(currentNodeId);
 
         if (!node) {
+          stopCurrentAudio();
           minerTextEl.textContent = t("embeds.gwarek.nodeNotFound", "Dialogue node not found. Restarting.");
           clearOptions();
           addOptionButton(t("embeds.gwarek.restart", "Restart"), "start");
@@ -172,6 +217,7 @@
         }
 
         minerTextEl.textContent = node.text || "";
+        playNodeAudio(currentNodeId, node);
         clearOptions();
 
         const opts = Array.isArray(node.options) ? node.options : [];
@@ -213,6 +259,7 @@
 
           render();
         } catch (err) {
+          stopCurrentAudio();
           minerTextEl.textContent = t(
             "embeds.gwarek.loadError",
             "Could not load dialogue JSON. Make sure the dialogue file exists and is served by your web server."
