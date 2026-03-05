@@ -2,6 +2,7 @@
 import { createPoiOverlay } from "./overlay.js";
 import { loadAllPois } from "./poiData.js";
 import { createPoiLayer } from "./poiLayer.js";
+import { addKmzPathLayer } from "./pathLayer.js";
 
 export function createMap({ mapElId = "map", ui, i18n } = {}) {
   if (!ui) throw new Error("createMap requires { ui }");
@@ -523,6 +524,17 @@ export function createMap({ mapElId = "map", ui, i18n } = {}) {
   loadAllPois()
     .then((pois) => poiLayer.setPois(pois))
     .catch((err) => console.error("POI load failed:", err));
+
+  addKmzPathLayer({
+    map,
+    url: "data/path/Test1.kmz",
+    style: {
+      color: "#0f172a",
+      weight: 4,
+      opacity: 0.95
+    },
+    fitBounds: false
+  }).catch((err) => console.error("Path load failed:", err));
 
   document.addEventListener("poi:complete-changed", () => poiLayer.updateIcons());
 

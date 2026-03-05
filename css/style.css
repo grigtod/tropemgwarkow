@@ -686,3 +686,14 @@ body {
     height: calc(100% - 64px);
   }
 }
+
+.route-flow-line {
+  stroke-linecap: round;
+  animation: route-dash-flow 1.2s linear infinite;
+}
+
+@keyframes route-dash-flow {
+  to {
+    stroke-dashoffset: -30;
+  }
+}
