@@ -44,6 +44,8 @@ export function createMap({ mapElId = "map", ui, i18n } = {}) {
     const maxTapTravelPx = 10;
     const maxTapDistancePx = 40;
     const zoomPixelsPerLevel = 120;
+    const minZoomStep = 0.2;
+    const gestureFrameMs = 33;
 
     let touchStartTime = 0;
     let touchStartPoint = null;
@@ -56,6 +58,10 @@ export function createMap({ mapElId = "map", ui, i18n } = {}) {
     let gestureStartZoom = 0;
     let gestureAnchor = null;
     let draggingWasEnabled = true;
+    let pendingGestureZoom = null;
+    let appliedGestureZoom = null;
+    let gestureRafId = 0;
+    let lastGestureFrameTime = 0;
 
     function distance(a, b) {
       if (!a || !b) return Infinity;
@@ -73,7 +79,37 @@ export function createMap({ mapElId = "map", ui, i18n } = {}) {
       if (!gestureActive) return;
       gestureActive = false;
       gestureTouchId = null;
+      pendingGestureZoom = null;
+      appliedGestureZoom = null;
+      lastGestureFrameTime = 0;
+      if (gestureRafId) {
+        cancelAnimationFrame(gestureRafId);
+        gestureRafId = 0;
+      }
       if (draggingWasEnabled) map.dragging.enable();
+    }
+
+    function applyGestureZoomIfNeeded(now) {
+      if (!gestureActive || pendingGestureZoom === null || !gestureAnchor) {
+        gestureRafId = 0;
+        return;
+      }
+
+      if (now - lastGestureFrameTime < gestureFrameMs) {
+        gestureRafId = requestAnimationFrame(applyGestureZoomIfNeeded);
+        return;
+      }
+
+      const shouldApply =
+        appliedGestureZoom === null || Math.abs(pendingGestureZoom - appliedGestureZoom) >= minZoomStep;
+
+      if (shouldApply) {
+        map.setZoomAround(gestureAnchor, pendingGestureZoom, { animate: false });
+        appliedGestureZoom = pendingGestureZoom;
+        lastGestureFrameTime = now;
+      }
+
+      gestureRafId = requestAnimationFrame(applyGestureZoomIfNeeded);
     }
 
     container.addEventListener(
@@ -98,8 +134,14 @@ export function createMap({ mapElId = "map", ui, i18n } = {}) {
           gestureStartY = touch.clientY;
           gestureStartZoom = map.getZoom();
           gestureAnchor = map.mouseEventToLatLng(touch);
+          appliedGestureZoom = gestureStartZoom;
+          pendingGestureZoom = gestureStartZoom;
+          lastGestureFrameTime = 0;
           draggingWasEnabled = map.dragging.enabled();
           if (draggingWasEnabled) map.dragging.disable();
+          if (!gestureRafId) {
+            gestureRafId = requestAnimationFrame(applyGestureZoomIfNeeded);
+          }
           event.preventDefault();
         }
       },
@@ -126,7 +168,7 @@ export function createMap({ mapElId = "map", ui, i18n } = {}) {
 
         const zoomDelta = (gestureStartY - currentTouch.clientY) / zoomPixelsPerLevel;
         const nextZoom = Math.max(config.minZoom, Math.min(config.maxZoom, gestureStartZoom + zoomDelta));
-        map.setZoomAround(gestureAnchor, nextZoom, { animate: false });
+        pendingGestureZoom = nextZoom;
         event.preventDefault();
       },
       { passive: false }
@@ -691,4 +733,3 @@ export function createMap({ mapElId = "map", ui, i18n } = {}) {
     center
   };
 }
-
