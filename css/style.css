@@ -694,6 +694,6 @@ body {
 
 @keyframes route-dash-flow {
   to {
-    stroke-dashoffset: -30;
+    stroke-dashoffset: 30;
   }
 }

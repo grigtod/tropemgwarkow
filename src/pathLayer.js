@@ -17,9 +17,13 @@ function collectLineStringsFromKml(kmlText) {
   }
 
   const lineStrings = [];
-  const lineNodes = doc.getElementsByTagNameNS("*", "LineString");
-  for (const lineNode of lineNodes) {
-    const coordinatesNode = lineNode.getElementsByTagNameNS("*", "coordinates")[0];
+  const geometryNodes = [
+    ...Array.from(doc.getElementsByTagNameNS("*", "LineString")),
+    ...Array.from(doc.getElementsByTagNameNS("*", "LinearRing"))
+  ];
+
+  for (const geometryNode of geometryNodes) {
+    const coordinatesNode = geometryNode.getElementsByTagNameNS("*", "coordinates")[0];
     if (!coordinatesNode) continue;
 
     const points = parseCoordinatesText(coordinatesNode.textContent || "");
@@ -27,7 +31,7 @@ function collectLineStringsFromKml(kmlText) {
   }
 
   if (!lineStrings.length) {
-    throw new Error("No LineString coordinates found in KML");
+    throw new Error("No LineString/LinearRing coordinates found in KML");
   }
 
   return lineStrings;
