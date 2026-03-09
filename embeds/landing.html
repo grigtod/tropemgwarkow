@@ -47,6 +47,38 @@
         aspect-ratio: 1 / 1;
       }
 
+      @media (min-width: 1024px) {
+        .wide-card {
+          max-width: 680px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .card-compact {
+          gap: 0.75rem;
+          padding: 0.85rem;
+        }
+
+        .slide-media {
+          aspect-ratio: 16 / 9;
+          max-height: min(24vh, 220px);
+        }
+
+        .slide-title-desktop {
+          font-size: 0.95rem;
+          line-height: 1.2;
+        }
+
+        .slide-text-desktop {
+          font-size: 0.8rem;
+          line-height: 1.35;
+        }
+
+        .header-lead {
+          padding-bottom: 0.75rem;
+        }
+      }
+
       @keyframes pulse-primary {
         0% {
           transform: translateY(-50%) scale(1);
@@ -160,7 +192,6 @@
       <!--h2 class="header-title text-slate-900 tracking-tight text-4xl font-bold leading-tight px-6 text-center pb-2 pt-6">
         Welcome to Discover TG App
       </h2-->
-      <br>
       <p class="header-lead text-slate-600 text-base text-center px-8 pb-8">
         Odkryj ukryte perełki naszego dziedzictwa górniczego podczas interaktywnej podróży
       </p>
@@ -171,8 +202,8 @@
             <div class="wide-card card-compact flex flex-col gap-6 rounded-2xl bg-white p-6 shadow-sm transition-all border-4 border-primary">
               <div class="slide-media w-full bg-center bg-no-repeat bg-cover rounded-xl border border-slate-100" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBj_cztmKLndCm9er7XKOmaVLlwlUeCSuaF7IpT9khO9MfGgyhLpK8tByOdVGdkTngn8p3WCRhb2UoIDgKzQU1KDk9UKrCYsIRt2gEys7pUOWBhMkfj8O_PZl4KL0EE6mZcb5NvbFWi0oZ0q7mDLk_ov1x3FUPARGrY5yKfkachaa5ZnmQ_WH3p45FtTCT7JcHo7mc581z3M6kAq32H8TTjUUYw_kmzDUUXxMvaDM2HV87TJ3FHAWrgFo7Yn1DoYolIBsypCeQfRPU");'></div>
               <div>
-                <p class="text-slate-900 text-lg font-bold leading-normal">Interactive Walk</p>
-                <p class="text-slate-600 text-sm font-normal leading-relaxed">This is an interactive walk designed to immerse you in the local history.</p>
+                <p class="text-slate-900 text-lg font-bold leading-normal">Interaktywny spacer</p>
+                <p class="text-slate-600 text-sm font-normal leading-relaxed">To interaktywny spacer zaprojektowany tak, aby zanurzyć Cię w lokalnej historii.</p>
               </div>
             </div>
           </div>
@@ -181,8 +212,8 @@
             <div class="wide-card card-compact flex flex-col gap-6 rounded-2xl bg-white p-6 shadow-sm transition-all border-4 border-primary">
               <div class="slide-media w-full bg-center bg-no-repeat bg-cover rounded-xl border border-slate-100" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASv8nvUYYC7Yla7Cz4GkNXondZNrlS-Sw5kSpKw9jDyqO3OHsyKWin7vzDQpHRW5dhP6JaAKEmTaKLyBws7LjgZvERdjvDyLAZ1LlpRcEi-Yv2HnE3kh4RIXZS8JHvLEtGh6XbG0JXD2Lw1yLec8VhmdvhwSDVcLkb1gM08N6pWfVoKtWENavlmpaGGOJeE1fF0khMQVs8CT5Fb9L0WlDSJyn_b69tO5Vg6KsnJQKKqXEfI4Q-iWlF6Mm9UrYkud9Vho_biLBnBQs");'></div>
               <div>
-                <p class="text-slate-900 text-lg font-bold leading-normal">Smart Path Tracking</p>
-                <p class="text-slate-600 text-sm font-normal leading-relaxed">Follow our path we designed and when you're close to the object click on it to unlock content.</p>
+                <p class="text-slate-900 text-lg font-bold leading-normal">Inteligentne śledzenie trasy</p>
+                <p class="text-slate-600 text-sm font-normal leading-relaxed">Podążaj wyznaczoną przez nas trasą, a gdy zbliżysz się do obiektu, kliknij go, aby odblokować treści.</p>
               </div>
             </div>
           </div>
@@ -191,8 +222,8 @@
             <div class="wide-card card-compact flex flex-col gap-6 rounded-2xl bg-white p-6 shadow-sm transition-all border-4 border-primary">
               <div class="slide-media w-full bg-center bg-no-repeat bg-cover rounded-xl border border-slate-100" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALXSIQPhT0j-tOXapfDaB9D7Gixzpn9OPEKlDGz3X3G2mbE0EqTAIlg0mCAbdWgwSvbNZMp1ClKUB4wxiEfJt08N9nxbHjkPPR1cwKpo0gTrjdWGqbSXsI6CJmTQT_oBXN5hLZOmGGPl-5SC2whY-j6TWs9JhG0leK7XeIYJeb2CM6bhaSW7D6-F8nqS59s9xSufo6ImCVAf4dzlcVwx1YJ-BAbndH1s91LjIXTtazpd_GGW5b6GUTngJ2QHolbaCfDUE9A0A1GXY");'></div>
               <div>
-                <p class="text-slate-900 text-lg font-bold leading-normal">Architectural Insights</p>
-                <p class="text-slate-600 text-sm font-normal leading-relaxed">You can see information about the buildings, their history, and unique features.</p>
+                <p class="text-slate-900 text-lg font-bold leading-normal">Architektoniczne ciekawostki</p>
+                <p class="text-slate-600 text-sm font-normal leading-relaxed">Możesz zobaczyć informacje o budynkach, ich historii oraz wyjątkowych cechach.</p>
               </div>
             </div>
           </div>
@@ -201,8 +232,8 @@
             <div class="wide-card card-compact flex flex-col gap-6 rounded-2xl bg-white p-6 shadow-sm transition-all border-4 border-primary">
               <div class="slide-media w-full bg-center bg-no-repeat bg-cover rounded-xl border border-slate-100" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCJKW7aVe8Ulzg2Kt2Utf4wk1GK7N2w5AYpJXCPlvptIzzULByudzNHyyUPbSWxCNU9BWme-uYmHv0NkgsxZGm77GLgl5yOpEnHyDMoOmCEzRxg6XIyhD3DAMT8nMPeTXTMDLG5IibTqri52fzs6JMmR4jpXF2NelNU8-VdcItm7OQiMu_F4-X9wmsstYT6HuS7GMisgIWQO9EGeu0kHiYm7Oes6mtEen3l2RJOU27YiFQCF0tTwvvTaV4bDI5bwNcrgDaiKeTlnc");'></div>
               <div>
-                <p class="text-slate-900 text-lg font-bold leading-normal">Talk to Gwarek</p>
-                <p class="text-slate-600 text-sm font-normal leading-relaxed">If this is Gwarek sculpture you can talk to it and hear stories from the underground!</p>
+                <p class="text-slate-900 text-lg font-bold leading-normal">Porozmawiaj z Gwarkiem</p>
+                <p class="text-slate-600 text-sm font-normal leading-relaxed">Jeśli to rzeźba Gwarka, możesz z nią porozmawiać i usłyszeć opowieści z podziemi!</p>
               </div>
             </div>
           </div>
