@@ -4,6 +4,15 @@
   return await res.json();
 }
 
+async function loadOptionalJson(url) {
+  try {
+    return await fetchJson(url);
+  } catch (error) {
+    console.warn(`Skipping POI dataset ${url}:`, error);
+    return null;
+  }
+}
+
 export async function loadAllPois() {
   const pois = [];
 
@@ -11,16 +20,16 @@ export async function loadAllPois() {
     pois.push({ id, lat, lon, label, emoji, embedUrl, labelKey });
   }
 
-  const loadedPOI = await fetchJson("./data/poi.json");
-  loadedPOI.data.forEach((el) =>
+  const loadedPOI = await loadOptionalJson("./data/poi.json");
+  loadedPOI?.data?.forEach((el) =>
     // Temporarily hide the generic "info" POI and museum marker.
     el.id !== "info" &&
     el.id !== "museum-tg" &&
     addToPois(el.id, el.lat, el.lon, el.label, el.emoji, el.embedUrl, `poi.${el.id}`)
   );
 
-  const loadedGwarek = await fetchJson("./data/gwarek.json");
-  loadedGwarek.data.forEach((el) =>
+  const loadedGwarek = await loadOptionalJson("./data/gwarek.json");
+  loadedGwarek?.data?.forEach((el) =>
     addToPois(
       el.id,
       el.lat,
@@ -33,13 +42,13 @@ export async function loadAllPois() {
   );
 
   // Temporarily hide photo POIs from photo.json.
-  // const loadedPhotos = await fetchJson("./data/photo.json");
-  // loadedPhotos.data.forEach((el) =>
+  // const loadedPhotos = await loadOptionalJson("./data/photo.json");
+  // loadedPhotos?.data?.forEach((el) =>
   //   addToPois(el.id, el.lat, el.lon, el.label, "📷", "./embeds/photo.html", `poi.${el.id}`)
   // );
 
-  const loadedHistoricalBuildings = await fetchJson("./data/historical-buildings.json");
-  loadedHistoricalBuildings.data.forEach((el) =>
+  const loadedHistoricalBuildings = await loadOptionalJson("./data/historical-buildings.json");
+  loadedHistoricalBuildings?.data?.forEach((el) =>
     addToPois(
       el.id,
       el.lat,
