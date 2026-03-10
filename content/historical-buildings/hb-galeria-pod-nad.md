@@ -1,6 +1,6 @@
 ---
 title: Galeria Pod-Nad
-lead: Detailed editorial copy has not been added for this point of interest yet.
+lead: Galeria oraz pracownia artystyczna stworzona przez Wernera Lubosa, w której odbywają się wystawy, wydarzenia kulturalne oraz prowadzone są zajęcia plastyczne. 
 image: ../assets/building.png
-location: Rynek 13, 42-600 Tarnowskie Góry
-source: https://tarnowskiegory.pl/2018/08/zabytki/
+location: Gliwicka 1, 42-600 Tarnowskie Góry
+source: https://pl.wikipedia.org/wiki/Werner_Lubos
