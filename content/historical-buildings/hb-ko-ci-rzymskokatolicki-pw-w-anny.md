@@ -1,6 +1,6 @@
 ---
 title: Kościół Rzymskokatolicki pw. św. Anny
-lead: St Anne’s Church (Kościół św. Anny) Historic cemetery church from the 17th century, listed as a protected monument in the region’s heritage register.
-image: ../assets/building.png
-location: Rynek 13, 42-600 Tarnowskie Góry
+lead: Wzniesiony przez protestantów w latach 1617 – 1619 jako przycmentarna świątynia. Wybudowany dzięki fundacji Jakuba Gruzełki i pani Goske. Na cześć głównego darczyńcy, który ofiarował na rzecz powstającego kościoła 700 talarów, na patrona wybrano mu św. Jakuba. W 1629 r. odebrany został protestantom przez katolików, prawdopodobnie w drugiej połowie XVII w. przemianowany na świątynię p.w. św. Anny. Gruntownie przebudowano go w latach 1846 – 1847. W późnobarokowym ołtarzu z końca XVIII w. umieszczono obraz „Nauczanie Matki Boskiej”.
+image: ../assets/kościół_Anna.jpg
+location: Gliwicka 30, 42-600 Tarnowskie Góry
 source: https://tarnowskiegory.pl/2018/08/zabytki/
