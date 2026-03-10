@@ -14,7 +14,7 @@ export function createPoiOverlay({
   let pendingFrameToken = null;
   let activeFrameEl = frameEl;
 
-  const COMPLETED_STORAGE_KEY = "discoverTG.completedPois.v1";
+  const COMPLETED_STORAGE_KEY = "tropemgwarkow.completedPois.v1";
 
   function loadCompletedSet() {
     try {

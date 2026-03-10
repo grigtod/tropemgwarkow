@@ -11,7 +11,7 @@ const APP_CONFIG = {
   closeLandingOnEscape: true
 };
 
-const LANDING_SEEN_KEY = "discoverTG.landingSeen.v1";
+const LANDING_SEEN_KEY = "tropemgwarkow.landingSeen.v1";
 
 function id(name) {
   const el = document.getElementById(name);

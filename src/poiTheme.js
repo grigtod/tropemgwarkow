@@ -1,5 +1,5 @@
-const ACCENT_YELLOW = "#f2c94c";
-const ACCENT_YELLOW_HOVER = "#f6d76d";
+const ACCENT_YELLOW = "#f6d300";
+const ACCENT_YELLOW_HOVER = "#f6d300";
 const ACCENT_BLACK = "#000000";
 
 export const POI_THEME = {

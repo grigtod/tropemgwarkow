@@ -7,7 +7,7 @@ import { isMobileExperience } from "./device.js";
 
 export function createMap({ mapElId = "map", ui } = {}) {
   if (!ui) throw new Error("createMap requires { ui }");
-  const APP_HISTORY_STATE_KEY = "discoverTG.route";
+  const APP_HISTORY_STATE_KEY = "tropemgwarkow.route";
 
   const center = L.latLng(config.targetLat, config.targetLon);
   const bounds = center.toBounds(config.radiusMeters * 2);
