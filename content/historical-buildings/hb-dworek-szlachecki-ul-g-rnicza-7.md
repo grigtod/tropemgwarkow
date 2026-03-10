@@ -1,6 +1,6 @@
 ---
 title: Dworek szlachecki
-lead: Zajazd wybudowany w XVIII w., w którym przebywali m.in. Johann Wolfgang Goethe (1790) i Julian Ursyn Niemcewicz (1821). Wewnątrz znajdują się obecnie restauracja „Dworek Goethego”, a na piętrze siedziba PTTK – Oddział Tarnowskie Góry. Charakterystycznymi dla niego są belkowate stropy oraz klepkowate drzwi wejściowe.
-image: ../assets/building.png
-location: Rynek 13, 42-600 Tarnowskie Góry
-source: https://tarnowskiegory.pl/2018/08/zabytki/
+lead: Dworek-zajazd w Tarnowskich Górach to zabytkowy obiekt wzniesiony w XVIII wieku, związany z pobytem wybitnych postaci, między innymi Johanna Wolfganga Goethego, który odwiedził go w 1790 roku, oraz Juliana Ursyna Niemcewicza, przebywającego tu w 1821 roku. Goethe, który przebywał w Tarnowskich Górach dwa dni, naszkicował plan maszyny parowej oraz stworzył wiersz, w którym dał wyraz wrażeniu, jakie wywarła na nim atmosfera tutejszych kopalń. Wiersz ten miał zresztą swe komiczne następstwa. Goethe napisał bowiem m.in. „Z dala od wykształconych ludzi, na końcu państwa, kto wam pomaga skarby odkrywać”. Miejscowy wyższy urzędnik górniczy, de Geselius poczuł się na tyle urażony tym fragmentem, sugerującym braki wykształcenia tarnogórzan, że sam napisał wiersz, w którym zarzucił Goethemu pychę. Budynek, nazywany dziś także Dworkiem Goethego, wyróżnia się charakterystycznymi drzwiami klepkowymi od frontu oraz belkowanymi stropami we wnętrzu, a obecnie mieści „Bar Praha” i siedzibę PTTK Oddział Tarnowskie Góry. W pomieszczeniach restauracyjnych zgromadzono również historyczne eksponaty, a sam obiekt pozostaje ważnym miejscem na mapie kulturalnej miasta. 
+image: ../assets/Dworek_szlachecki.jpg
+location: Górnicza 7, 42-600 Tarnowskie Góry
+source: https://www.slaskie.travel/culturalheritage/3428/dworek-zajazd-w-tarnowskich-gorach
