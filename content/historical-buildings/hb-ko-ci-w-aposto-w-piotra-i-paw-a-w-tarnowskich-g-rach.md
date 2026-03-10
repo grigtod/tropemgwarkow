@@ -1,6 +1,6 @@
 ---
 title: Kościół św. Apostołów Piotra i Pawła
-lead: Church of Saints Peter and Paul (Kościół Świętych Apostołów Piotra i Pawła), ul. Gliwicka A major historic parish church whose history reaches back to the 16th century
-image: ../assets/building.png
-location: Rynek 13, 42-600 Tarnowskie Góry
+lead: W 1529 r. protestanci wybudowali na miejscu katolickiej kaplicy wzniesionej w latach 1523 – 1525 drewniany kościół, który w 1531 r. przebudowali na murowany. W 1545 r. dobudowano do niego prezbiterium a w latach 1560 – 1563 dokonano rozbudowy świątyni oraz wystawiono wieżę, na której umieszczono dzwony (pierwszy w 1563 a drugi w 1571 r.). W 1586 r. zainstalowano na niej jeden z najstarszych na Górnym Śląsku zegarów. W 1629 r., w trakcie trwania wojny trzydziestoletniej przejęty przez katolików, którzy 1 lutego 1630 r. utworzyli w mieście parafię katolicką. Wobec sprzeciwu licznych w mieście luteran konsekrowany dopiero 4 maja 1670 r. Od tego też roku jest on pod wezwaniem śś. Apostołów Piotra i Pawła. W latach 1723-1724 dobudowano do południowej strony kościoła późnobarokową kaplicę św. Barbary. Ostatniej gruntownej przebudowy świątyni dokonano w latach 1848 – 1851. Wówczas to dzięki wzniesieniu nowej nawy poprzecznej i prezbiterium oraz przekształceniu nawy głównej kościół nabrał cech neoromańskich. Najcenniejszym zabytkiem jest wieża, która zachowała swój szesnastowieczny kształt, oprócz hełmu wymienionego w 1798 r. Wewnątrz zachowały się cenne płyty nagrobne oraz obrazy np. płyta nagrobna Magdaleny Janiczkowej żony burmistrza Jakuba Gruzełki zmarłej w 1614 r. (najstarszy w Polsce pomnik nagrobny z polskim napisem), obraz tarnogórzanina Fryderyka Buterweka z 1841 r. „Nadanie władzy św. Piotrowi” (umieszczony na ołtarzu głównym). Warto także przyjrzeć się pięknym witrażom z 1901 r.
+image: ../assets/Kościół_P_P.jpg
+location: Gliwicka 14, 42-600 Tarnowskie Góry
 source: https://tarnowskiegory.pl/2018/08/zabytki/
