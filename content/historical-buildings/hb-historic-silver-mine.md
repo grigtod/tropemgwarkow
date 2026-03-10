@@ -1,6 +1,6 @@
 ---
-title: Historic Silver Mine
-lead: The Royal Mine was at the heart of the 18th-century industrial revolution in Upper Silesia and remains one of the region's defining engineering landmarks.
-image: https://lh3.googleusercontent.com/aida-public/AB6AXuAVsXKDGoXm0xXyQdwJAZFfgyjFfqw4D0QbDuoQrFltyzlbicnijUqRzWt34TuSimRPwjnSygAscYQVzy_PKMrFSTihxaZZV0BLPf0GdDN8z3RkjxSYSj4C6nOmBwAGmTrpiRVkuED8f6eulHcMIPNzWY9sivLXH2aZNDkufj0yPUagrUoeRxIxCfIqxkczbBsdEy2lz7HydwdbmblkHdFleXexxHlTTfP9d9CMBjArKZAL7sG4Sa6pYgJqvfvL1OLFxppJca3yWLY
-location: Rynek 13, 42-600 Tarnowskie Góry
-source: https://tarnowskiegory.pl/2018/08/zabytki/
+title: Zabytkowa Kopalnia Srebra
+lead: Zabytkowa Kopalnia Srebra w Tarnowskich Górach to wyjątkowy obiekt pogórniczy i jedna z najważniejszych atrakcji turystycznych regionu, będąca pozostałością po dawnym górnictwie rud srebra, ołowiu i cynku, które przez stulecia kształtowało rozwój miasta. Udostępniona zwiedzającym podziemna trasa prowadzi przez historyczne chodniki i komory, a jej najbardziej charakterystycznym elementem jest przepływ łodziami przez zalany fragment wyrobisk. Kopalnia stanowi cenne świadectwo przemysłowego dziedzictwa Tarnowskich Gór, a jej znaczenie podkreśla wpis na listę światowego dziedzictwa UNESCO jako części obiektu obejmującego tarnogórskie podziemia oraz system gospodarowania wodami podziemnymi.
+image: 
+location: Szczęść Boże 81, 42-600 Tarnowskie Góry
+source: https://pl.wikipedia.org/wiki/Zabytkowa_Kopalnia_Srebra
