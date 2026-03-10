@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Historical Site</title>
+    <title>Obiekt historyczny</title>
     <link rel="icon" type="image/x-icon" href="../favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
@@ -99,6 +99,12 @@
         background: rgba(0, 0, 0, 0.05);
       }
 
+      .icon-btn svg,
+      .hero-audio-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+
       .hero {
         position: relative;
         margin: 0 -16px;
@@ -131,6 +137,35 @@
         background:
           linear-gradient(180deg, rgba(249, 208, 6, 0.08), rgba(249, 208, 6, 0.02)),
           linear-gradient(180deg, rgba(23, 23, 23, 0.06), rgba(23, 23, 23, 0.32));
+      }
+
+      .hero-audio-btn {
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(255, 248, 220, 0.94);
+        color: var(--poi-ink);
+        cursor: pointer;
+        box-shadow: 0 12px 24px rgba(23, 23, 23, 0.18);
+        transition:
+          transform 140ms ease,
+          background-color 140ms ease;
+      }
+
+      .hero-audio-btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero-audio-btn.is-playing {
+        background: var(--poi-accent);
       }
 
       .hero-image-fallback {
@@ -170,27 +205,6 @@
         padding-top: 28px;
       }
 
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 7px 12px;
-        border-radius: 999px;
-        background: rgba(249, 208, 6, 0.18);
-        color: rgba(23, 23, 23, 0.8);
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-
-      h1 {
-        margin: 16px 0 10px;
-        font-size: clamp(2rem, 6vw, 2.75rem);
-        line-height: 1.02;
-        letter-spacing: -0.04em;
-      }
-
       .lede {
         margin: 0;
         color: var(--poi-subtle);
@@ -217,6 +231,20 @@
 
       .detail-card[hidden] {
         display: none;
+      }
+
+      .detail-card.link-card {
+        color: inherit;
+        text-decoration: none;
+        border-radius: 16px;
+        transition:
+          background-color 120ms ease,
+          box-shadow 120ms ease;
+      }
+
+      .detail-card.link-card:hover {
+        background: rgba(249, 208, 6, 0.08);
+        box-shadow: inset 0 0 0 1px rgba(23, 23, 23, 0.08);
       }
 
       .detail-icon {
@@ -342,9 +370,68 @@
         color: var(--poi-ink);
       }
 
+      .source-card {
+        display: grid;
+        gap: 10px;
+        margin-top: 24px;
+        padding: 18px 20px;
+        border: 1px solid var(--poi-border);
+        border-radius: 18px;
+        background:
+          linear-gradient(180deg, rgba(249, 208, 6, 0.08), rgba(255, 255, 255, 0.96)),
+          rgba(255, 255, 255, 0.92);
+        box-shadow: 0 12px 28px rgba(23, 23, 23, 0.06);
+        color: inherit;
+        text-align: left;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .source-card[hidden] {
+        display: none;
+      }
+
+      .source-card:hover {
+        border-color: rgba(23, 23, 23, 0.18);
+        box-shadow: 0 16px 32px rgba(23, 23, 23, 0.1);
+      }
+
+      .source-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .source-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: rgba(249, 208, 6, 0.18);
+        font-size: 18px;
+      }
+
+      .source-label {
+        margin: 0;
+        color: #6a6a6a;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .source-title {
+        margin: 2px 0 0;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+
       .complete-row {
         display: flex;
-        margin-top: 22px;
+        margin-top: 18px;
+        padding: 0 16px;
       }
 
       .complete-btn {
@@ -395,64 +482,75 @@
     <main class="page">
       <header class="page-header">
         <div class="page-header-bar">
-          <button class="icon-btn" id="backButton" type="button" aria-label="Back">
+          <button class="icon-btn" id="backButton" type="button" aria-label="Wstecz">
             &#x2190;
           </button>
-          <p class="page-header-title" id="headerTitle">Historical Site</p>
+          <p class="page-header-title" id="headerTitle">Obiekt historyczny</p>
           <div aria-hidden="true"></div>
         </div>
       </header>
 
       <div class="hero">
-        <div class="hero-image" id="heroImage" role="img" aria-label="Historical site image">
+        <div class="hero-image" id="heroImage" role="img" aria-label="Zdjęcie obiektu historycznego">
+          <button class="hero-audio-btn" id="audioButton" type="button" aria-label="Odtwórz opis audio">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 9v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <path d="M8 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <path d="M12 4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <path d="M16 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <path d="M20 9v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
           <div class="hero-image-fallback" id="heroFallback">
             <span class="hero-image-fallback-icon" aria-hidden="true">&#x1F3DB;</span>
-            <span id="heroFallbackText">No illustration provided for this location.</span>
+            <span id="heroFallbackText">Brak ilustracji dla tej lokalizacji.</span>
           </div>
         </div>
-      </div>
-
-      <section class="content">
-        <div class="eyebrow">Historical Site</div>
-        <h1 id="pageTitle">Historical Site</h1>
-        <p class="lede" id="pageLead">Loading location information...</p>
         <div class="complete-row">
           <button class="complete-btn" id="completeButton" type="button" aria-pressed="false">
             <span class="complete-btn-icon" id="completeButtonIcon">&#x2713;</span>
             <span id="completeButtonLabel">Zakończ</span>
           </button>
         </div>
+      </div>
 
+      <section class="content">
+        <p class="lede" id="pageLead">Ładowanie informacji o lokalizacji...</p>
         <div class="details-grid" id="detailsGrid">
           <article class="detail-card" id="hoursCard">
             <div class="detail-icon" aria-hidden="true">&#x1F558;</div>
             <div class="detail-meta">
-              <p class="detail-label">Hours</p>
+              <p class="detail-label">Godziny</p>
               <p class="detail-value" id="hoursValue"></p>
             </div>
           </article>
 
-          <article class="detail-card" id="locationCard">
+          <a class="detail-card link-card" id="locationCard" href="#" target="_blank" rel="noreferrer noopener">
             <div class="detail-icon" aria-hidden="true">&#x1F4CD;</div>
             <div class="detail-meta">
-              <p class="detail-label">Location</p>
+              <p class="detail-label">Lokalizacja</p>
               <p class="detail-value" id="locationValue"></p>
             </div>
-          </article>
+          </a>
         </div>
 
-        <section id="bodySection" hidden>
-          <h2 class="section-title" id="bodyHeading">About This Site</h2>
-          <div class="markdown" id="pageBody"></div>
-        </section>
+        <a class="source-card" id="sourceCard" href="#" target="_blank" rel="noreferrer noopener" hidden>
+          <div class="source-header">
+            <span class="source-icon" aria-hidden="true">&#x1F517;</span>
+            <div>
+              <p class="source-label">Źródło</p>
+              <p class="source-title">Zobacz oryginalne źródło</p>
+            </div>
+          </div>
+        </a>
 
-        <div class="status" id="statusBox">Loading content...</div>
+        <div class="status" id="statusBox">Ładowanie treści...</div>
       </section>
     </main>
 
     <script type="module">
       const DEFAULT_LOCATION = "Tarnowskie Gory";
-      const DEFAULT_TITLE = "Historical Site";
+      const DEFAULT_TITLE = "Obiekt historyczny";
       const params = new URLSearchParams(window.location.search);
       const poiId = params.get("poiId");
 
@@ -460,9 +558,9 @@
         heroImage: document.getElementById("heroImage"),
         heroFallback: document.getElementById("heroFallback"),
         heroFallbackText: document.getElementById("heroFallbackText"),
-        pageTitle: document.getElementById("pageTitle"),
         headerTitle: document.getElementById("headerTitle"),
         pageLead: document.getElementById("pageLead"),
+        audioButton: document.getElementById("audioButton"),
         backButton: document.getElementById("backButton"),
         completeButton: document.getElementById("completeButton"),
         completeButtonLabel: document.getElementById("completeButtonLabel"),
@@ -471,11 +569,12 @@
         locationCard: document.getElementById("locationCard"),
         locationValue: document.getElementById("locationValue"),
         detailsGrid: document.getElementById("detailsGrid"),
-        bodySection: document.getElementById("bodySection"),
-        bodyHeading: document.getElementById("bodyHeading"),
-        pageBody: document.getElementById("pageBody"),
+        sourceCard: document.getElementById("sourceCard"),
         statusBox: document.getElementById("statusBox")
       };
+      let currentModel = null;
+      let currentUtterance = null;
+      const speechSynthesisApi = "speechSynthesis" in window ? window.speechSynthesis : null;
 
       function escapeHtml(text) {
         return text
@@ -595,12 +694,12 @@
         }
 
         const closingIndex = normalized.indexOf("\n---\n", 4);
-        if (closingIndex === -1) {
-          return { attributes: {}, body: normalized.trim() };
-        }
-
-        const header = normalized.slice(4, closingIndex);
-        const body = normalized.slice(closingIndex + 5).trim();
+        const header = closingIndex === -1
+          ? normalized.slice(4).trim()
+          : normalized.slice(4, closingIndex);
+        const body = closingIndex === -1
+          ? ""
+          : normalized.slice(closingIndex + 5).trim();
         const attributes = {};
 
         for (const line of header.split("\n")) {
@@ -638,9 +737,9 @@
           lead: attributes.lead || null,
           hours: attributes.hours || null,
           location: attributes.location || null,
+          source: attributes.source || null,
           image: attributes.image || null,
           imageAlt: attributes.imageAlt || attributes.image_alt || null,
-          sectionTitle: attributes.sectionTitle || attributes.section_title || null,
           body
         };
       }
@@ -652,10 +751,66 @@
         return firstBlock.replace(/\n+/g, " ").trim();
       }
 
+      function buildDirectionsUrl(title, location) {
+        const destination = [title, location].filter(Boolean).join(", ").trim();
+        if (!destination) return "#";
+        return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+      }
+
+      function syncAudioButton(isPlaying) {
+        elements.audioButton.classList.toggle("is-playing", isPlaying);
+        elements.audioButton.setAttribute("aria-label", isPlaying ? "Zatrzymaj opis audio" : "Odtwórz opis audio");
+      }
+
+      function stopAudioPlayback() {
+        if (!speechSynthesisApi) return;
+        speechSynthesisApi.cancel();
+        currentUtterance = null;
+        syncAudioButton(false);
+      }
+
+      function buildAudioNarration(model) {
+        const parts = [];
+        if (model?.title) parts.push(model.title);
+        if (model?.lead) parts.push(model.lead);
+        if (model?.hours) parts.push(`Godziny: ${model.hours}.`);
+        if (model?.location) parts.push(`Lokalizacja: ${model.location}.`);
+        if (model?.source) parts.push("Źródło dostępne na stronie internetowej.");
+        return parts.join(" ");
+      }
+
+      function playAudioNarration() {
+        if (!speechSynthesisApi || !currentModel) return;
+        if (speechSynthesisApi.speaking) {
+          stopAudioPlayback();
+          return;
+        }
+
+        const narration = buildAudioNarration(currentModel).trim();
+        if (!narration) return;
+
+        const utterance = new SpeechSynthesisUtterance(narration);
+        utterance.lang = "pl-PL";
+        utterance.rate = 1;
+        utterance.onend = () => {
+          currentUtterance = null;
+          syncAudioButton(false);
+        };
+        utterance.onerror = () => {
+          currentUtterance = null;
+          syncAudioButton(false);
+        };
+
+        currentUtterance = utterance;
+        syncAudioButton(true);
+        speechSynthesisApi.cancel();
+        speechSynthesisApi.speak(utterance);
+      }
+
       function applyViewModel(model) {
-        elements.pageTitle.textContent = model.title || DEFAULT_TITLE;
+        currentModel = model;
         elements.headerTitle.textContent = model.title || DEFAULT_TITLE;
-        elements.pageLead.textContent = model.lead || "Explore the story behind this location.";
+        elements.pageLead.textContent = model.lead || "Poznaj historię tego miejsca.";
 
         if (model.image) {
           elements.heroImage.classList.add("has-image");
@@ -667,7 +822,7 @@
           elements.heroImage.style.backgroundImage = "";
           elements.heroImage.setAttribute("aria-label", model.imageAlt || model.title || DEFAULT_TITLE);
           elements.heroFallback.hidden = false;
-          elements.heroFallbackText.textContent = model.imageAlt || "No illustration provided for this location.";
+          elements.heroFallbackText.textContent = model.imageAlt || "Brak ilustracji dla tej lokalizacji.";
         }
 
         const hours = (model.hours || "").trim();
@@ -677,18 +832,18 @@
         const location = (model.location || DEFAULT_LOCATION).trim();
         elements.locationCard.hidden = !location;
         elements.locationValue.textContent = location;
+        elements.locationCard.href = buildDirectionsUrl(model.title || DEFAULT_TITLE, location);
 
         const showDetailsGrid = !elements.hoursCard.hidden || !elements.locationCard.hidden;
         elements.detailsGrid.hidden = !showDetailsGrid;
 
-        const body = (model.body || "").trim();
-        if (body) {
-          elements.bodySection.hidden = false;
-          elements.bodyHeading.textContent = model.sectionTitle || "About This Site";
-          elements.pageBody.innerHTML = parseMarkdown(body);
+        const source = (model.source || "").trim();
+        if (source) {
+          elements.sourceCard.hidden = false;
+          elements.sourceCard.href = source;
         } else {
-          elements.bodySection.hidden = true;
-          elements.pageBody.innerHTML = "";
+          elements.sourceCard.hidden = true;
+          elements.sourceCard.href = "#";
         }
 
         elements.statusBox.hidden = true;
@@ -713,6 +868,14 @@
         postToParent({ type: "poi-overlay-toggle-complete" });
       });
 
+      elements.audioButton.addEventListener("click", () => {
+        playAudioNarration();
+      });
+
+      window.addEventListener("beforeunload", () => {
+        stopAudioPlayback();
+      });
+
       window.addEventListener("message", (event) => {
         if (event.origin !== window.location.origin) return;
         const { data } = event;
@@ -725,9 +888,9 @@
         if (!poiId) {
           applyViewModel({
             title: DEFAULT_TITLE,
-            lead: "This embedded page was opened without a POI identifier.",
+            lead: "Tę stronę osadzoną otwarto bez identyfikatora POI.",
             location: DEFAULT_LOCATION,
-            body: "Building details are not available for this marker."
+            body: "Szczegóły obiektu nie są dostępne dla tego znacznika."
           });
           return;
         }
@@ -741,9 +904,9 @@
           if (!markdownRecord && !jsonRecord) {
             applyViewModel({
               title: slugToTitle(poiId),
-              lead: "No page content has been created for this marker yet.",
+              lead: "Nie utworzono jeszcze treści dla tego znacznika.",
               location: DEFAULT_LOCATION,
-              body: "Add a Markdown file in `content/historical-buildings/` to author this page."
+              body: "Dodaj plik Markdown w `content/historical-buildings/`, aby przygotować tę stronę."
             });
             return;
           }
@@ -751,21 +914,21 @@
           const fallbackText = jsonRecord?.description || "";
           applyViewModel({
             title: markdownRecord?.title || jsonRecord?.label || slugToTitle(poiId),
-            lead: markdownRecord?.lead || extractLeadFromText(markdownRecord?.body || fallbackText) || "Explore the story behind this location.",
+            lead: markdownRecord?.lead || extractLeadFromText(markdownRecord?.body || fallbackText) || "Poznaj historię tego miejsca.",
             hours: markdownRecord?.hours || "",
             location: markdownRecord?.location || DEFAULT_LOCATION,
+            source: markdownRecord?.source || "",
             image: markdownRecord?.image || "",
             imageAlt: markdownRecord?.imageAlt || "",
-            sectionTitle: markdownRecord?.sectionTitle || "About This Site",
-            body: markdownRecord?.body || fallbackText || "No description provided for this location."
+            body: markdownRecord?.body || fallbackText || "Brak opisu dla tej lokalizacji."
           });
         } catch (error) {
           console.error(error);
           applyViewModel({
             title: DEFAULT_TITLE,
-            lead: "Could not load this historical site.",
+            lead: "Nie udało się wczytać tego obiektu historycznego.",
             location: DEFAULT_LOCATION,
-            body: "Check the console for the fetch error and confirm the related Markdown or JSON source exists."
+            body: "Sprawdź błąd pobierania w konsoli i potwierdź, że powiązane źródło Markdown lub JSON istnieje."
           });
         }
       }
