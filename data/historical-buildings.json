@@ -25,7 +25,7 @@
                      "id":  "hb-ko-ci-w-aposto-w-piotra-i-paw-a-w-tarnowskich-g-rach",
                      "lat":  50.4430911,
                      "lon":  18.8535069,
-                     "label":  "Kościół św. Apostołów Piotra i Pawła w Tarnowskich Górach",
+                     "label":  "Kościół św. Apostołów Piotra i Pawła",
                      "description":  "Church of Saints Peter and Paul (Kościół Świętych Apostołów Piotra i Pawła), ul. Gliwicka\nA major historic parish church whose history reaches back to the 16th century\n\nW 1529 r. protestanci wybudowali na miejscu katolickiej kaplicy wzniesionej w latach 1523 – 1525 drewniany kościół, który w 1531 r. przebudowali na murowany. W 1545 r. dobudowano do niego prezbiterium a w latach 1560 – 1563 dokonano rozbudowy świątyni oraz wystawiono wieżę, na której umieszczono dzwony (pierwszy w 1563 a drugi w 1571 r.). W 1586 r. zainstalowano na niej jeden z najstarszych na Górnym Śląsku zegarów. W 1629 r., w trakcie trwania wojny trzydziestoletniej przejęty przez katolików, którzy 1 lutego 1630 r. utworzyli w mieście parafię katolicką. Wobec sprzeciwu licznych w mieście luteran konsekrowany dopiero 4 maja 1670 r. Od tego też roku jest on pod wezwaniem śś. Apostołów Piotra i Pawła. W latach 1723-1724 dobudowano do południowej strony kościoła późnobarokową kaplicę św. Barbary. Ostatniej gruntownej przebudowy świątyni dokonano w latach 1848 – 1851. Wówczas to dzięki wzniesieniu nowej nawy poprzecznej i prezbiterium oraz przekształceniu nawy głównej kościół nabrał cech neoromańskich. Najcenniejszym zabytkiem jest wieża, która zachowała swój szesnastowieczny kształt, oprócz hełmu wymienionego w 1798 r. Wewnątrz zachowały się cenne płyty nagrobne oraz obrazy np. płyta nagrobna Magdaleny Janiczkowej żony burmistrza Jakuba Gruzełki zmarłej w 1614 r. (najstarszy w Polsce pomnik nagrobny z polskim napisem), obraz tarnogórzanina Fryderyka Buterweka z 1841 r. „Nadanie władzy św. Piotrowi” (umieszczony na ołtarzu głównym). Warto także przyjrzeć się pięknym witrażom z 1901 r."
                  },
                  {
@@ -39,14 +39,14 @@
                      "id":  "hb-historic-silver-mine",
                      "lat":  50.4254789,
                      "lon":  18.8494603,
-                     "label":  "Historic Silver Mine",
+                     "label":  "Zabytkowa Kopalnia Srebra",
                      "description":  "Historic Silver Mine (Zabytkowa Kopalnia Srebra)\nA key industrial heritage complex that forms part of the UNESCO listed Tarnowskie Góry Lead Silver Zinc Mine and its Underground Water Management System."
                  },
                  {
                      "id":  "hb-black-trout-adit",
                      "lat":  50.4286044,
                      "lon":  18.8158932,
-                     "label":  "Black Trout Adit",
+                     "label":  "Sztolnia Czarnego Pstrąga",
                      "description":  "Black Trout Adit (Sztolnia Czarnego Pstrąga)\nA preserved and visitable section of the historic drainage system connected with the Fryderyk mine workings, open to tourists since 1957."
                  },
                  {
@@ -67,14 +67,14 @@
                      "id":  "hb-dom-cochlera-rynek-5",
                      "lat":  50.4442038,
                      "lon":  18.8560139,
-                     "label":  "Dom Cochlera (Rynek 5)",
+                     "label":  "Dom Cochlera",
                      "description":  "Dom Cochlera (Rynek 5)\nWybudowany w XVII w., przebudowany w XIX w. Obecnie mieści się tu najstarsza w mieście apteka „Pod Aniołem”, założona około 1790 r. przez burmistrza Cochlera. W pomieszczeniach apteki zachowały się sklepienia krzyżowe. W latach 1839-1855 w budynku mieściła się Szkoła Górnicza. W zewnętrznej elewacji frontowej znajduje się figura aniołka."
                  },
                  {
                      "id":  "hb-neo-romanesque-protestant-church",
                      "lat":  50.4448843,
                      "lon":  18.8556272,
-                     "label":  "Neo-Romanesque Protestant Church",
+                     "label":  "Kościół ewangelicko-augsburski",
                      "description":  "Kościół ewangelicko-augsburski (Rynek 12)\nWybudowany przez gminę ewangelicką w 1780 r. dzięki wsparciu finansowemu Hencklów, Laryszów, Grustów, Bohmów oraz Schulzów. Budowniczymi świątyni byli architekt Krzysztof Worbs ze Strzelec oraz cieśla Jan Karol Henning z Opola. Kościół posiadał wieżę, na której w 1787 r. umieszczono zegar wykonany przez Franciszka Schmachela, zegarmistrza z Brynicy. W 1900 r. przebudowano go w stylu neoromańskim. Wewnątrz znajdują się charakterystyczne dla świątyń protestanckich empory."
                  },
                  {
@@ -88,63 +88,56 @@
                      "id":  "hb-dom-petrascha-rynek-2",
                      "lat":  50.4442503,
                      "lon":  18.8551646,
-                     "label":  "Dom Petrascha (Rynek 2)",
+                     "label":  "Dom Petrascha",
                      "description":  "Z wybudowanego w XVI w. domu pozostały piwnice posiadające sklepienia kolebkowe. Przebudowany w II poł. XIX w. W pierwszej poł. XVIII w. właścicielem budynku był mistrz pocztowy Ferdynand Petrasch, który założył w nim w 1713 r. pierwszą tarnogórską księgarnię."
                  },
                  {
                      "id":  "hb-dom-wieprzowskiego-rynek-3",
                      "lat":  50.44427,
                      "lon":  18.8552244,
-                     "label":  "Dom Wieprzowskiego (Rynek 3)",
+                     "label":  "Dom Wieprzowskiego",
                      "description":  "Wybudowany w XVII w., powiększony w XVIII w., a przebudowany w 1890. W dolnej części sieni zachowały się sklepienia krzyżowo-kolebkowe"
                  },
                  {
                      "id":  "hb-dom-bernharda-rynek-13",
                      "lat":  50.4447276,
                      "lon":  18.8556566,
-                     "label":  "Dom Bernharda (Rynek 13)",
+                     "label":  "Dom Bernharda",
                      "description":  "Wybudowany na pocz. XVI w. Od ok. 1562 r. do 1608 r. siedziba magistratu. W 1610 r. nabył go urzędnik Jana Jerzego Hohenzollerna Piotr Bernhard. Od XVII w. prowadzono tu wyszynk i browar, a w XIX w. istniejącą gospodę nazwano „Pod Lipami” (zlikwidowana na początku lat 90-tych XX w.). Parterowy pierwotnie budynek nadbudowano w 1930 r. W sieni zachowały się sklepienia krzyżowe."
-                 },
-                 {
-                     "id":  "hb-point-16",
-                     "lat":  50.4451477,
-                     "lon":  18.8544839,
-                     "label":  "Point 16",
-                     "description":  ""
                  },
                  {
                      "id":  "hb-dom-szymkowica-rynek-14",
                      "lat":  50.4448729,
                      "lon":  18.8547497,
-                     "label":  "Dom Szymkowica (Rynek 14)",
+                     "label":  "Dom Szymkowica",
                      "description":  "Dom Szymkowica (Rynek 14)\nNa przełomie XVI i XVII w. właścicielem budynku był burmistrz Stanisław Szymkowic. W 1608 r. nabyty został przez mieszczan, aby urządzić w nim siedzibę magistratu. W 1908 r. na jego miejscu wybudowano siedzibę banku. Pierwotnie formą zbliżony do Domu Sedlaczka. Obecnie siedziba PKO BP."
                  },
                  {
                      "id":  "hb-domy-podcieniowe-w-zachodniej-pierzei-rynku",
                      "lat":  50.4444176,
                      "lon":  18.8546948,
-                     "label":  "Domy podcieniowe w zachodniej pierzei Rynku.",
+                     "label":  "Domy podcieniowe",
                      "description":  "Wybudowane w drugiej połowie XVI w. były najbogatszymi domami mieszczańskimi. Razem z kamienicami początkowego fragmentu ul. Gliwickiej (również II poł. XVI w.) tworzą ciąg podcieni z półkulistymi arkadami posiadającymi sklepienia krzyżowo-kolebkowe"
                  },
                  {
                      "id":  "hb-siedziba-stowarzyszenia-mi-o-nik-w-ziemi-tarnog-rskiej-ul-gliwicka-2",
                      "lat":  50.4438375,
                      "lon":  18.8544337,
-                     "label":  "Siedziba Stowarzyszenia Miłośników Ziemi Tarnogórskiej (ul. Gliwicka 2)",
+                     "label":  "Siedziba SMZT",
                      "description":  "Dom zbudowany w 1598 r. Mieściła się w nim w latach 1754-1854 szkoła protestancka. Od 1965 r. znajdują się tutaj biura zarządu SMZT."
                  },
                  {
                      "id":  "hb-dom-przy-ul-gliwickiej-6",
                      "lat":  50.4438823,
                      "lon":  18.853995,
-                     "label":  "Dom przy ul. Gliwickiej 6",
+                     "label":  "ul. Gliwickiej 6",
                      "description":  "Zbudowany w początkach XVI w. jest jednym z najstarszych budynków w mieście. Była to pierwsza siedziba władz miejskich oraz Urzędu Górniczego. W 1534 r. w czasie buntu górników piwnice pełniły funkcję więzienia. Przebudowany w XIX w. W zachodniej elewacji domu wmurowano bryłę srebra, którą podobno wyorał chłop Rybka. W 1930 r. pod minerałem umieszczono nawiązującą do tego zdarzenia tablicę pamiątkową."
                  },
                  {
                      "id":  "hb-dworek-szlachecki-ul-g-rnicza-7",
                      "lat":  50.4430861,
                      "lon":  18.8554237,
-                     "label":  "Dworek szlachecki (ul. Górnicza 7)",
+                     "label":  "Dworek szlachecki",
                      "description":  "Zajazd wybudowany w XVIII w., w którym przebywali m.in. Johann Wolfgang Goethe (1790) i Julian Ursyn Niemcewicz (1821). Wewnątrz znajdują się obecnie restauracja „Dworek Goethego”, a na piętrze siedziba PTTK – Oddział Tarnowskie Góry. Charakterystycznymi dla niego są belkowate stropy oraz klepkowate drzwi wejściowe."
                  },
                  {
@@ -172,7 +165,7 @@
                      "id":  "hb-center-for-trade-service-hala",
                      "lat":  50.4450705,
                      "lon":  18.8623748,
-                     "label":  "Center for Trade - Service HALA",
+                     "label":  "Center for Trade - HALA",
                      "description":  ""
                  },
                  {
