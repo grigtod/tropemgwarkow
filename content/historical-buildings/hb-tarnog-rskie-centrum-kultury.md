@@ -4,4 +4,4 @@ lead: Tarnogórskie Centrum Kultury to jedna z największych samorządowych inst
 image: ./assets/poi/TCK.jpg
 location: Jana III Sobieskiego 7, 42-600 Tarnowskie Góry
 source: https://pl.wikipedia.org/wiki/Tarnog%C3%B3rskie_Centrum_Kultury
-image: ./assets/vo/TCK.mp3
+audio: ./assets/vo/TCK.mp3
