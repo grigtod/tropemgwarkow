@@ -506,8 +506,56 @@ export function createMap({ mapElId = "map", ui } = {}) {
   let isRequestInFlight = false;
   let hasLocationPermission = false;
   let userMarker = null;
+  let userHeading = null;
+  let locationWatchId = null;
+  let orientationTrackingStarted = false;
   let bannerState = "hidden";
   let bannerMessage = null;
+
+  function normalizeHeading(heading) {
+    if (!Number.isFinite(heading)) return null;
+    return ((heading % 360) + 360) % 360;
+  }
+
+  function getHeadingFromDeviceOrientation(event) {
+    if (Number.isFinite(event.webkitCompassHeading)) {
+      return normalizeHeading(event.webkitCompassHeading);
+    }
+
+    if (!Number.isFinite(event.alpha)) return null;
+
+    const screenAngle =
+      window.screen?.orientation?.angle ??
+      (typeof window.orientation === "number" ? window.orientation : 0);
+
+    return normalizeHeading(360 - event.alpha + screenAngle);
+  }
+
+  function makeUserMarkerIcon(heading) {
+    const normalizedHeading = normalizeHeading(heading);
+    const hasHeading = normalizedHeading !== null;
+    const headingStyle = hasHeading ? ` style="--heading: ${normalizedHeading}"` : "";
+    const headingClass = hasHeading ? " user-heading has-heading" : " user-heading";
+
+    return L.divIcon({
+      className: "user-heading-icon",
+      html: `<div class="${headingClass.trim()}"${headingStyle} aria-hidden="true"></div>`,
+      iconSize: [22, 22],
+      iconAnchor: [11, 11]
+    });
+  }
+
+  function renderUserMarkerHeading() {
+    if (!userMarker) return;
+    userMarker.setIcon(makeUserMarkerIcon(userHeading));
+  }
+
+  function setUserHeading(nextHeading) {
+    const normalizedHeading = normalizeHeading(nextHeading);
+    if (normalizedHeading === userHeading) return;
+    userHeading = normalizedHeading;
+    renderUserMarkerHeading();
+  }
 
   function hideLocationBanner() {
     bannerState = "hidden";
@@ -566,20 +614,80 @@ export function createMap({ mapElId = "map", ui } = {}) {
     ui.myLocationBtn.disabled = true;
   }
 
-  function updateUserMarker(latlng) {
+  function updateUserMarker(latlng, heading = userHeading) {
+    const normalizedHeading = normalizeHeading(heading);
     if (!userMarker) {
-      userMarker = L.circleMarker(latlng, {
-        radius: 8,
-        color: "#ffffff",
-        weight: 2,
-        fillColor: "#0078ff",
-        fillOpacity: 0.95
+      userMarker = L.marker(latlng, {
+        icon: makeUserMarkerIcon(normalizedHeading),
+        keyboard: false,
+        interactive: false,
+        zIndexOffset: 1000
       }).addTo(map);
+      userHeading = normalizedHeading;
       poiLayer.setUserLocation(latlng);
       return;
     }
     userMarker.setLatLng(latlng);
+    if (normalizedHeading !== userHeading) {
+      userHeading = normalizedHeading;
+      renderUserMarkerHeading();
+    }
     poiLayer.setUserLocation(latlng);
+  }
+
+  function onOrientationChange(event) {
+    if (!userMarker) return;
+    setUserHeading(getHeadingFromDeviceOrientation(event));
+  }
+
+  async function ensureOrientationTrackingFromGesture() {
+    if (orientationTrackingStarted) return;
+
+    const orientationEvent = window.DeviceOrientationEvent;
+    if (typeof orientationEvent === "undefined") return;
+
+    if (typeof orientationEvent.requestPermission === "function") {
+      try {
+        const permission = await orientationEvent.requestPermission();
+        if (permission !== "granted") return;
+      } catch {
+        return;
+      }
+    }
+
+    window.addEventListener("deviceorientation", onOrientationChange, true);
+    orientationTrackingStarted = true;
+  }
+
+  function handlePositionUpdate(position, { recenter = false } = {}) {
+    const latlng = L.latLng(position.coords.latitude, position.coords.longitude);
+    const heading = normalizeHeading(position.coords.heading);
+    updateUserMarker(latlng, heading ?? userHeading);
+
+    if (recenter) {
+      map.setView(latlng, Math.max(map.getZoom(), 17));
+    }
+  }
+
+  function startLocationWatch() {
+    if (!navigator.geolocation || locationWatchId !== null) return;
+
+    locationWatchId = navigator.geolocation.watchPosition(
+      (position) => {
+        handlePositionUpdate(position);
+      },
+      () => {
+        if (locationWatchId !== null) {
+          navigator.geolocation.clearWatch(locationWatchId);
+          locationWatchId = null;
+        }
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 15000,
+        maximumAge: 1000
+      }
+    );
   }
 
   function permissionErrorMessage(error) {
@@ -603,13 +711,15 @@ export function createMap({ mapElId = "map", ui } = {}) {
     isRequestInFlight = true;
     ui.grantLocationBtn.disabled = true;
     refreshLocationBanner();
+    ensureOrientationTrackingFromGesture();
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
         isRequestInFlight = false;
         enableMyLocation();
         hideLocationBanner();
-        updateUserMarker(L.latLng(position.coords.latitude, position.coords.longitude));
+        handlePositionUpdate(position);
+        startLocationWatch();
       },
       (error) => {
         isRequestInFlight = false;
@@ -630,6 +740,7 @@ export function createMap({ mapElId = "map", ui } = {}) {
   ui.myLocationBtn.addEventListener("click", () => {
     closeInfoOverlay();
     tryHideLayers();
+    ensureOrientationTrackingFromGesture();
 
     if (!hasLocationPermission) {
       showLocationPrompt();
@@ -638,9 +749,8 @@ export function createMap({ mapElId = "map", ui } = {}) {
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        const latlng = L.latLng(position.coords.latitude, position.coords.longitude);
-        updateUserMarker(latlng);
-        map.setView(latlng, Math.max(map.getZoom(), 17));
+        handlePositionUpdate(position, { recenter: true });
+        startLocationWatch();
       },
       (error) => {
         showLocationNotice(permissionErrorMessage(error));

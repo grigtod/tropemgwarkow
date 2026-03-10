@@ -36,27 +36,33 @@
         height: 100%;
         margin: 0;
         background: transparent;
+        overflow-x: hidden;
+        overflow-y: auto;
       }
 
       .landing-root {
-        height: 100dvh;
-        max-height: 100dvh;
-        overflow: hidden;
+        min-height: 100vh;
+        min-height: 100svh;
+        min-height: 100dvh;
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: visible;
       }
 
       .slides-shell {
         min-height: 0;
+        overflow-y: visible;
       }
 
       .carousel-container {
         scroll-behavior: smooth;
-        height: 100%;
-        align-items: stretch;
+        height: auto;
+        align-items: flex-start;
       }
 
       .slide-pad {
         display: flex;
-        align-items: stretch;
+        align-items: flex-start;
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
       }
@@ -182,27 +188,9 @@
       }
 
       @media (max-height: 700px) {
-        .landing-root {
-          height: auto;
-          max-height: none;
-          min-height: 100dvh;
-          overflow-x: hidden;
-          overflow-y: auto;
-        }
-
         .slides-shell {
           flex: 0 0 auto;
           min-height: auto;
-          overflow-y: visible;
-        }
-
-        .carousel-container {
-          height: auto;
-          align-items: flex-start;
-        }
-
-        .slide-pad {
-          align-items: flex-start;
         }
 
         .header-lead {
@@ -277,7 +265,7 @@
         Przed Tobą interaktywny spacer po Tarnowskich Górach, w którym historia wychodzi z muzeum i rusza z Tobą w miasto!
       </p>
 
-      <div class="slides-shell flex-1 min-h-0 overflow-y-auto relative group flex items-start py-1">
+      <div class="slides-shell flex-1 min-h-0 relative group flex items-start py-1">
         <div class="carousel-container flex flex-nowrap overflow-x-auto snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" id="carousel-container">
           <div class="flex-none w-full snap-center slide-pad px-6">
             <div class="wide-card card-compact flex flex-col gap-6 rounded-2xl bg-white p-6 shadow-sm transition-all border-4 border-primary">
