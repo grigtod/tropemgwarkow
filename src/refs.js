@@ -7,7 +7,7 @@ const myLocationBtn = document.getElementById("myLocationBtn");
 const centerBtn = document.getElementById("centerBtn");
 const styleToggleBtn = document.getElementById("styleToggleBtn");
 
-const layersShowBtn = document.getElementById("layersShowBtn"); 
+// const layersShowBtn = document.getElementById("layersShowBtn");
 const toggleImageOverlayBtn = document.getElementById("toggleImageOverlayBtn");
 
 const poiOverlay = document.getElementById("poiOverlay");

@@ -329,19 +329,12 @@ export function createMap({ mapElId = "map", ui } = {}) {
 
     ui.myLocationBtn.setAttribute("aria-label", "My location");
     ui.centerBtn.setAttribute("aria-label", "Center city");
-    ui.layersShowBtn.setAttribute("aria-label", "Map layers");
     ui.infoBtn.setAttribute("aria-label", "Information");
 
     updateLayerSubtitles();
     refreshLocationBanner();
     overlay.syncCompleteUi();
   }
-
-  ui.layersShowBtn.addEventListener("click", () => {
-    layersVisible = !layersVisible;
-    if (layersVisible) showLayers();
-    else hideLayers();
-  });
 
   ui.infoBtn.addEventListener("click", () => {
     tryHideLayers();

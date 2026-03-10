@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     centerBtn: id("centerBtn"),
     grantLocationBtn: id("grantLocationBtn"),
     dismissBannerBtn: id("dismissBannerBtn"),
-    layersShowBtn: id("layersShowBtn"),
     infoBtn: id("infoBtn"),
     styleToggleBtn: id("styleToggleBtn")//,
     //toggleImageOverlayBtn: id("toggleImageOverlayBtn")
