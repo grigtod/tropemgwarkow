@@ -578,6 +578,8 @@
       let currentAudio = null;
       let currentAudioUrl = "";
       let parentAudioState = { audioUrl: "", isPlaying: false };
+      const audioAvailabilityCache = new Map();
+      let audioAvailabilityRequestId = 0;
 
       function escapeHtml(text) {
         return text
@@ -779,11 +781,40 @@
         }
       }
 
-      function syncAudioAvailability(model) {
-        const hasAudio = Boolean(resolveAudioUrl(model?.audio));
+      function setAudioAvailability(hasAudio) {
         elements.audioButton.hidden = !hasAudio;
         elements.audioButton.disabled = !hasAudio;
         if (!hasAudio) syncAudioButton(false);
+      }
+
+      async function checkAudioAvailability(audioPath) {
+        const audioUrl = resolveAudioUrl(audioPath);
+        if (!audioUrl) return false;
+
+        if (audioAvailabilityCache.has(audioUrl)) {
+          return audioAvailabilityCache.get(audioUrl);
+        }
+
+        try {
+          const response = await fetch(audioUrl, {
+            method: "HEAD",
+            cache: "no-store"
+          });
+          const isAvailable = response.ok;
+          audioAvailabilityCache.set(audioUrl, isAvailable);
+          return isAvailable;
+        } catch {
+          audioAvailabilityCache.set(audioUrl, false);
+          return false;
+        }
+      }
+
+      async function syncAudioAvailability(model) {
+        const requestId = ++audioAvailabilityRequestId;
+        const hasAudio = await checkAudioAvailability(model?.audio);
+        if (requestId !== audioAvailabilityRequestId) return hasAudio;
+        setAudioAvailability(hasAudio);
+        return hasAudio;
       }
 
       function stopAudioPlayback() {
@@ -860,6 +891,7 @@
 
       function playAudioNarration({ forceRestart = false } = {}) {
         if (!currentModel) return;
+        if (elements.audioButton.disabled) return;
         const audioUrl = resolveAudioUrl(currentModel.audio);
         if (!audioUrl) {
           stopAudioPlayback();
@@ -901,13 +933,13 @@
         });
       }
 
-      function applyViewModel(model) {
+      async function applyViewModel(model) {
         stopAudioPlayback();
         currentModel = model;
         elements.headerTitle.textContent = model.title || DEFAULT_TITLE;
         elements.pageLead.textContent = model.lead || "Poznaj historię tego miejsca.";
 
-        syncAudioAvailability(model);
+        setAudioAvailability(false);
 
         if (model.image) {
           elements.heroImage.classList.add("has-image");
@@ -945,7 +977,8 @@
 
         elements.statusBox.hidden = true;
 
-        if (resolveAudioUrl(model.audio)) {
+        const hasAudio = await syncAudioAvailability(model);
+        if (hasAudio && currentModel === model) {
           playAudioNarration({ forceRestart: true });
         }
       }
@@ -987,7 +1020,7 @@
         const { data } = event;
         if (!data || typeof data.type !== "string") return;
         if (data.type === "poi-overlay-opened") {
-          if (!isEmbeddedOverlay() && resolveAudioUrl(currentModel?.audio)) {
+          if (!isEmbeddedOverlay() && !elements.audioButton.disabled && resolveAudioUrl(currentModel?.audio)) {
             playAudioNarration({ forceRestart: true });
           }
           return;
