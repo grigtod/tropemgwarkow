@@ -264,6 +264,21 @@ body::before {
   background: var(--tg-accent-yellow-hover, #f6d300);
 }
 
+.control-btn.is-tracking {
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.14),
+    inset 0 0 0 2px rgba(10, 132, 255, 0.22);
+}
+
+.control-btn.is-tracking:hover {
+  background: var(--tg-accent-yellow-hover, #f6d300);
+}
+
+.control-btn.is-tracking .control-btn-icon {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(91%) saturate(2555%) hue-rotate(197deg)
+    brightness(102%) contrast(102%);
+}
+
 .control-btn-icon {
   width: 37px;
   height: 37px;

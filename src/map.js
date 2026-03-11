@@ -504,6 +504,7 @@ export function createMap({ mapElId = "map", ui } = {}) {
   document.addEventListener("poi:complete-changed", () => poiLayer.updateIcons());
 
   ui.centerBtn.addEventListener("click", () => {
+    setUserTrackingEnabled(false);
     map.setView(center, cityCenterZoom);
     tryHideLayers();
   });
@@ -514,6 +515,7 @@ export function createMap({ mapElId = "map", ui } = {}) {
   let userHeading = null;
   let locationWatchId = null;
   let orientationTrackingStarted = false;
+  let isFollowingUser = false;
   const prefersWebkitCompassHeading = /iphone|ipad|ipod/i.test(navigator.userAgent || "");
   const minGpsHeadingSpeedMps = 1.5;
   let bannerState = "hidden";
@@ -625,6 +627,17 @@ export function createMap({ mapElId = "map", ui } = {}) {
     refreshLocationBanner();
   }
 
+  function syncMyLocationButtonState() {
+    ui.myLocationBtn.classList.toggle("is-tracking", isFollowingUser);
+    ui.myLocationBtn.setAttribute("aria-pressed", isFollowingUser ? "true" : "false");
+  }
+
+  function setUserTrackingEnabled(enabled) {
+    if (isFollowingUser === enabled) return;
+    isFollowingUser = enabled;
+    syncMyLocationButtonState();
+  }
+
   function showLocationNotice(message) {
     bannerState = "notice";
     bannerMessage = message;
@@ -639,11 +652,13 @@ export function createMap({ mapElId = "map", ui } = {}) {
   function enableMyLocation() {
     hasLocationPermission = true;
     ui.myLocationBtn.disabled = false;
+    syncMyLocationButtonState();
   }
 
   function disableMyLocation() {
     hasLocationPermission = false;
     ui.myLocationBtn.disabled = true;
+    setUserTrackingEnabled(false);
   }
 
   function updateUserMarker(latlng, heading = userHeading) {
@@ -698,6 +713,11 @@ export function createMap({ mapElId = "map", ui } = {}) {
 
     if (recenter) {
       map.setView(latlng, Math.max(map.getZoom(), 17));
+      return;
+    }
+
+    if (isFollowingUser) {
+      map.panTo(latlng, { animate: false });
     }
   }
 
@@ -781,6 +801,7 @@ export function createMap({ mapElId = "map", ui } = {}) {
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        setUserTrackingEnabled(true);
         handlePositionUpdate(position, { recenter: true });
         startLocationWatch();
       },
@@ -793,6 +814,11 @@ export function createMap({ mapElId = "map", ui } = {}) {
         maximumAge: 5000
       }
     );
+  });
+
+  map.on("dragstart", () => {
+    if (!isFollowingUser) return;
+    setUserTrackingEnabled(false);
   });
 
   if (!navigator.geolocation) {
