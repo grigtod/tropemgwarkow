@@ -514,6 +514,8 @@ export function createMap({ mapElId = "map", ui } = {}) {
   let userHeading = null;
   let locationWatchId = null;
   let orientationTrackingStarted = false;
+  const prefersWebkitCompassHeading = /iphone|ipad|ipod/i.test(navigator.userAgent || "");
+  const minGpsHeadingSpeedMps = 1.5;
   let bannerState = "hidden";
   let bannerMessage = null;
 
@@ -522,18 +524,43 @@ export function createMap({ mapElId = "map", ui } = {}) {
     return ((heading % 360) + 360) % 360;
   }
 
+  function getScreenAngle() {
+    const angle =
+      window.screen?.orientation?.angle ??
+      (typeof window.orientation === "number" ? window.orientation : 0);
+
+    return Number.isFinite(angle) ? angle : 0;
+  }
+
   function getHeadingFromDeviceOrientation(event) {
     if (Number.isFinite(event.webkitCompassHeading)) {
       return normalizeHeading(event.webkitCompassHeading);
     }
 
     if (!Number.isFinite(event.alpha)) return null;
+    if (event.absolute !== true) return null;
 
-    const screenAngle =
-      window.screen?.orientation?.angle ??
-      (typeof window.orientation === "number" ? window.orientation : 0);
+    const screenAngle = getScreenAngle();
+    const heading = normalizeHeading(360 - event.alpha + screenAngle);
+    if (heading === null) return null;
 
-    return normalizeHeading(360 - event.alpha + screenAngle);
+    // On Apple devices, `webkitCompassHeading` is the preferred sensor source.
+    // Falling back to alpha there can be noisier than simply keeping the last stable heading.
+    if (prefersWebkitCompassHeading) return null;
+
+    return heading;
+  }
+
+  function getHeadingFromGeolocation(position) {
+    const heading = normalizeHeading(position?.coords?.heading);
+    if (heading === null) return null;
+
+    const speed = position?.coords?.speed;
+    if (Number.isFinite(speed) && speed < minGpsHeadingSpeedMps) {
+      return null;
+    }
+
+    return heading;
   }
 
   function makeUserMarkerIcon(heading) {
@@ -666,7 +693,7 @@ export function createMap({ mapElId = "map", ui } = {}) {
 
   function handlePositionUpdate(position, { recenter = false } = {}) {
     const latlng = L.latLng(position.coords.latitude, position.coords.longitude);
-    const heading = normalizeHeading(position.coords.heading);
+    const heading = getHeadingFromGeolocation(position);
     updateUserMarker(latlng, heading ?? userHeading);
 
     if (recenter) {
